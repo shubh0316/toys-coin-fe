@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      extend: {
+        fontFamily: {
+          frank: ["'Frankfurter Std'", "Inter"],
+        }
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
