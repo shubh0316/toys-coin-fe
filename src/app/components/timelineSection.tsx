@@ -66,7 +66,7 @@ const TimelineSection = () => {
             <Image 
               src={timeline} 
               alt="Timeline" 
-              width={150} 
+              width={156} 
               height={20}
               className="hidden md:block"
             />
