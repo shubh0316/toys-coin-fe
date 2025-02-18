@@ -24,7 +24,7 @@ const DonationSection = () => {
 
       {/* Centered Animated Text */}
       <Container>
-        <p className="relative font-frank text-start text-2xl lg:text-8xl font-bold text-[#31CDE6] flex flex-wrap ">
+        <p className="relative font-frank text-start text-5xl lg:text-8xl font-bold text-[#31CDE6] flex flex-wrap ">
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 0.5 / words.length;

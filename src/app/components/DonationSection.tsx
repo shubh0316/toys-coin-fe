@@ -9,7 +9,7 @@ import panda from "@/assets/panda.png";
 function DonationSection() {
   return (
     <div>
-      <div className="relative w-full h-[850px] flex justify-center items-center">
+      <div className="relative w-full min-h-screen md:h-[850px] flex justify-center items-center">
         {/* Background Image */}
         <Image 
           src={bg2} 
@@ -21,13 +21,13 @@ function DonationSection() {
 
         {/* Centered Content */}
         <Container> 
-          <div className="flex  justify-center items-center h-full">
-            <Image src={amazon} width={480} alt="Amazon Logo" />
-            <div className='bg-[#31CDE6] w-[746px] h-[359px] rounded-[180px] border-4 border-white mt-6 flex justify-center items-center'>
-              <div className='flex p-16 gap-8 justify-between'>
+          <div className="flex md:flex-row flex-col justify-center items-center h-full md:pb-0 pb-4">
+            <Image src={amazon} width={480} alt="Amazon Logo" className= '' />
+            <div className='bg-[#31CDE6] md:w-[746px]  rounded-[180px] border-4 border-white mt-6 flex justify-center items-center'>
+              <div className='flex md:flex-row flex-col p-16 gap-8 justify-between'>
                  <Image src={panda} alt=" " width={200} /> 
                  <div className='flex flex-col space-y-4'>
-                  <div className='font-frank text-4xl text-[#2D2B42]'>
+                  <div className='font-frank text-2xl md:text-4xl text-[#2D2B42]'>
                     DONATIONS MADE THROUGH AMAZON
                   </div>
                   <p className='text-xl font-light text-[#2D2B42]'>Donating toys and essential items is easy when ordering through Amazon. Donations can be shipped directly to a vetted foster care agency. </p>

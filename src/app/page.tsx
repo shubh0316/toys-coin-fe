@@ -14,14 +14,14 @@ export default function Home() {
     <>
     <HeroSection />
     <OurMissionSection />
-    <DedicationSection />
+     <DedicationSection />
     <TimelineSection />
-    <DonationSection />
-    <AmazonSection />
-    <TeddySection />
-    <MonetarySection />
-    <VolunteerSection />
-    <Footer />
+     <DonationSection />
+     <AmazonSection />
+     <TeddySection />
+     <MonetarySection />
+ <VolunteerSection />
+    <Footer />    
     </>
   );
 }

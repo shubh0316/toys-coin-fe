@@ -7,7 +7,7 @@ import mission from '@/assets/mission.png'
 
 function OurMissionSection() {
   return (
-    <div className='bg-[#F9EFE0]'>
+    <div className='bg-[#F9EFE0] '>
       <Container>
         <motion.div 
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -19,7 +19,7 @@ function OurMissionSection() {
             damping: 20,
             duration: 0.8
           }}
-          className='grid grid-cols-1 md:grid-cols-2 p-10 gap-8'
+          className='grid grid-cols-1  overflow-hidden md:grid-cols-2 p-6 md:p-10 gap-8'
         >
           {/* Image Section */}
           <div className='flex items-center justify-center'>
