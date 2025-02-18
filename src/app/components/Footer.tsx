@@ -5,7 +5,6 @@ import Image from 'next/image'
 import icon from "@/assets/icon.png";
 import { motion } from "framer-motion";
 import twitter from "@/assets/twitter.png";
-import Container from './Container';
 
 function Footer() {
   return (
