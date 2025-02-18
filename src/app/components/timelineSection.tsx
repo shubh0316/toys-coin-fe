@@ -4,7 +4,7 @@ import Container from "./Container";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import tick from "@/assets/tick.png";
 import logo from "@/assets/logo.png";
 import photo1 from "@/assets/photo1.png";
 import photo2 from "@/assets/photo2.png";
@@ -66,7 +66,7 @@ const TimelineSection = () => {
             <Image 
               src={timeline} 
               alt="Timeline" 
-              width={140} 
+              width={150} 
               height={20}
               className="hidden md:block"
             />
@@ -84,18 +84,22 @@ const TimelineSection = () => {
               </div>
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
                 <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">FAIR LAUNCH</h2>
-                <p className="text-lg md:text-xl text-[#2D2B42] font-inter w-4/5">
-                  TOYS coin will be launched <br />
-                  on the Solana network. <br />
-                  Fair launch tokenomics <br />
-                  will be at the core of the launch. <br />
-                  No inside investors, no lockups, <br />
+                <p className="text-md md:text-xl text-[#2D2B42] font-light ">
+                  TOYS coin will be launched 
+                  on the Solana network. 
+                  Fair launch tokenomics 
+                  will be at the core of the launch. 
+                  No inside investors, no lockups, 
                   no cabal, no KOL, only community-driven tokenomics.
                 </p>
-                <ul className="list-disc list-inside space-y-4 text-gray-600 md:text-xl">
-                  <li>80% Circulating Supply</li>
-                  <li>20% Marketing & Events</li>
-                </ul>
+                <ul className="space-y-4 text-gray-600 font-light md:text-xl">
+      {["80% Circulating Supply", "20% Marketing & Events"].map((item, index) => (
+        <li key={index} className="flex items-center gap-2">
+          <Image src={tick} alt="Tick Icon" width={24} height={20} />
+          {item}
+        </li>
+      ))}
+    </ul>
               </div>
             </div>
 
@@ -110,15 +114,22 @@ const TimelineSection = () => {
               </div>
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
                 <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">AWARENESS & DONATIONS</h2>
-                <p className="text-lg md:text-xl text-gray-700 font-inter leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
                   Our initial goal is to build our community using the TOYS coin as a way to drive awareness 
                   and adoption in order to increase toy donations. We will accomplish this with 3 core strategies.
                 </p>
-                <ul className="list-disc list-inside space-y-4 text-gray-600 md:text-lg">
-                  <li>Partnerships & Sponsors</li>
-                  <li>Social Media Growth</li>
-                  <li>Influencer Marketing</li>
-                </ul>
+                <ul className="space-y-4 text-gray-600 font-light md:text-lg">
+      {[
+        "Partnerships & Sponsors",
+        "Social Media Growth",
+        "Influencer Marketing",
+      ].map((item, index) => (
+        <li key={index} className="flex items-center gap-2">
+          <Image src={tick} alt="Tick Icon" width={24} height={20} />
+          {item}
+        </li>
+      ))}
+    </ul>
               </div>
             </div>
 
@@ -133,15 +144,22 @@ const TimelineSection = () => {
               </div>
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
                 <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">NATIONAL EXPANSION</h2>
-                <p className="text-lg md:text-xl text-gray-700 font-inter leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
                   We will implement the necessary strategies to ensure seamless expansion of 
                   partnerships throughout the United States.
                 </p>
-                <ul className="list-disc list-inside space-y-4 text-gray-600 md:text-lg">
-                  <li>Recruit Volunteers</li>
-                  <li>Expand Foster Care Network</li>
-                  <li>Expand Donor Marketing</li>
-                </ul>
+                <ul className="space-y-4 text-gray-600 font-light md:text-lg">
+      {[
+        "Recruit Volunteers",
+        "Expand Foster Care Network",
+        "Expand Donor Marketing",
+      ].map((item, index) => (
+        <li key={index} className="flex items-center gap-2">
+          <Image src={tick} alt="Tick Icon" width={24} height={20} />
+          {item}
+        </li>
+      ))}
+    </ul>
               </div>
             </div>
           </div>

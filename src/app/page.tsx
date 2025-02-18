@@ -8,6 +8,7 @@ import AmazonSection from "./components/amazonSection";
 import TeddySection from "./components/TeddySection";
 import MonetarySection from "./components/MonetarySection";
 import VolunteerSection from "./components/VolunteerSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
     <TeddySection />
     <MonetarySection />
     <VolunteerSection />
+    <Footer />
     </>
   );
 }

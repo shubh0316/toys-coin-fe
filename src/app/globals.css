@@ -24,10 +24,10 @@
 body {
   color: var(--foreground);
   background-color: var(--background);
-  font-family: 'Inter';
+  font-family: 'inter';
 }
 
 /* Apply Frankfurter Std font only to elements using the Tailwind class */
 .font-frank {
-  font-family: 'Frankfurter Std', 'Inter';
+  font-family: 'Frankfurter Std', 'inter';
 }

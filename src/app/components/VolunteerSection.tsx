@@ -6,7 +6,7 @@ import Container from './Container';
 
 function VolunteerSection() {
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-full -z-10">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

@@ -52,7 +52,7 @@ function OurMissionSection() {
                 damping: 20,
                 delay: 0.3
               }}
-              className='text-4xl md:text-6xl text-start font-frank text-[#2D2B42]'
+              className='text-4xl md:text-7xl text-start font-frank text-[#2D2B42]'
             >
               Our Mission
             </motion.h2>
@@ -64,7 +64,7 @@ function OurMissionSection() {
               transition={{ staggerChildren: 0.15, delayChildren: 0.4 }}
             >
               <motion.p 
-                className='text-[#2D2B42] text-lg font-thin'
+                className='text-[#2D2B42] text-lg font-light'
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 150 }}
@@ -82,7 +82,7 @@ function OurMissionSection() {
               </motion.p>
 
               <motion.p 
-                className='text-[#2D2B42] font-thin text-lg'
+                className='text-[#2D2B42] font-light text-lg'
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ type: "spring", stiffness: 150, delay: 0.2 }}
