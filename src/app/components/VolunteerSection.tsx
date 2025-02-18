@@ -22,7 +22,7 @@ function VolunteerSection() {
             </h2>
             <p className="text-white text-base md:text-2xl text-center font-inter mt-4 md:mt-10 px-4 md:px-0">
               Our foster care partners can always use a few more helping hands. 
-              If you're interested in being added to our volunteer roster to help 
+              If you&apos;re interested in being added to our volunteer roster to help 
               out in your local area, please fill out the form.
             </p>
             <div className="mt-6 md:mt-8 flex justify-center">
