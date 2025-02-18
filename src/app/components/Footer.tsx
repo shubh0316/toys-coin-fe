@@ -2,7 +2,6 @@
 import React from 'react'
 import footerLogo from '@/assets/footerLogo.png'
 import Image from 'next/image'
-import CTA from "@/assets/CTA.png";
 import icon from "@/assets/icon.png";
 import { motion } from "framer-motion";
 import twitter from "@/assets/twitter.png";
