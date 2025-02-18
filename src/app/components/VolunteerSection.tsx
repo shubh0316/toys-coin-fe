@@ -20,12 +20,12 @@ function VolunteerSection() {
             <h2 className="text-4xl md:text-[130px] text-center font-frank text-[#2D2B42] capitalize">
               Volunteer?
             </h2>
-            <p className="text-white text-base md:text-2xl text-center font-inter mt-4 md:mt-10 px-4 md:px-0">
+            <p className="text-white text-lg leading-8 md:text-2xl text-center font-inter mt-4 md:mt-10 px-4 md:px-0">
               Our foster care partners can always use a few more helping hands. 
               If you&apos;re interested in being added to our volunteer roster to help 
               out in your local area, please fill out the form.
             </p>
-            <div className="mt-6 md:mt-8 flex justify-center">
+            <div className="mt-6 md:pb-0 pb-10 md:mt-8 flex justify-center">
               <div className="w-48 md:w-200">
                 <Image 
                   src={Buttons} 

@@ -30,7 +30,7 @@ function DonationSection() {
                   <div className='font-frank text-2xl md:text-4xl text-[#2D2B42]'>
                     DONATIONS MADE THROUGH AMAZON
                   </div>
-                  <p className='text-xl font-light text-[#2D2B42]'>Donating toys and essential items is easy when ordering through Amazon. Donations can be shipped directly to a vetted foster care agency. </p>
+                  <p className='text-lg leading-8 font-light text-[#2D2B42]'>Donating toys and essential items is easy when ordering through Amazon. Donations can be shipped directly to a vetted foster care agency. </p>
                  </div>
               </div>
 

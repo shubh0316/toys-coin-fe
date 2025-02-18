@@ -90,7 +90,7 @@ function AmazonSection() {
                       <div className="text-[#2D2B42] font-semibold text-base md:text-xl">
                         {agency.name}
                       </div>
-                      <div className="text-[#2D2B42] text-sm md:text-lg w-1/2">
+                      <div className="text-[#2D2B42] text-sm md:text-lg w-1/2 leading-8 font-light">
                        Shipping address: <br /> 
                        {agency.address}
                       </div>

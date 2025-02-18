@@ -32,7 +32,7 @@ function MonetarySection() {
                         className="w-full h-auto"
                       />
                     </div>
-                    <div className="font-light text-lg md:text-xl text-[#2D2B42]  md:px-0">
+                    <div className="font-light leading-8 text-lg md:text-xl text-[#2D2B42]  md:px-0">
                       For monetary donations we encourage you to consider showing
                       your support by buying the TOYS coin. It helps us to grow
                       our community and build awareness for the Toys Coin
