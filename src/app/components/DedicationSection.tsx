@@ -14,7 +14,7 @@ const DonationSection = () => {
     offset: ["start end", "end start"],
   });
 
-  const text = "Dedicated to providing toys of comfort to over 400,000 kids entering into foster care.";
+  const text = "Dedicated to providing toys of comfort to kids entering into foster care";
   const words = text.split(" ");
 
   return (
@@ -24,7 +24,7 @@ const DonationSection = () => {
 
       {/* Centered Animated Text */}
       <Container>
-        <p className="relative font-frank text-start text-5xl lg:text-8xl font-bold text-[#31CDE6] flex flex-wrap ">
+        <p className="relative font-frank text-start text-4xl lg:text-8xl font-bold text-[#31CDE6] flex flex-wrap ">
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 0.5 / words.length;

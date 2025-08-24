@@ -4,8 +4,6 @@ import Container from "./Container";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import tick from "@/assets/tick.png";
-import logo from "@/assets/logo.png";
 import photo1 from "@/assets/photo1.png";
 import photo2 from "@/assets/photo2.png";
 import photo3 from "@/assets/photo3.png";
@@ -49,14 +47,14 @@ const TimelineSection = () => {
   }, []);
 
   return (
-    <div className="bg-[#F9EFE0] font-inter py-20">
+    <div id="did-you-know" className="bg-[#F9EFE0] font-inter py-10">
       <Container>
         {/* Header Section */}
         <div className="text-center">
-          <Image src={logo} alt="ToysCoin Logo" className="mx-auto" />
-          <h1 className="text-4xl md:text-6xl font-bold font-frank text-[#2D2B42] mt-6">
-            PLAN OF ACTION
+          <h1 className="text-4xl md:text-9xl font-bold font-frank text-[#2D2B42] mt-6 leading-wide tracking-wider">
+            DID YOU KNOW?
           </h1>
+          <p className="text-xl font-bold font-frank leading-tight text-[#2D2B42] tracking-wider">2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES</p>
         </div>
 
         {/* Timeline Section */}
@@ -67,7 +65,7 @@ const TimelineSection = () => {
               src={timeline} 
               alt="Timeline" 
               width={156} 
-              height={20}
+              height={10}
               className="hidden md:block"
             />
           </div>
@@ -83,23 +81,19 @@ const TimelineSection = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">FAIR LAUNCH</h2>
+                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">OVER 400,000</h2>
                 <p className="text-md md:text-xl text-[#2D2B42] font-light ">
-                  TOYS coin will be launched 
-                  on the Solana network. 
-                  Fair launch tokenomics 
-                  will be at the core of the launch. 
-                  No inside investors, no lockups, 
-                  no cabal, no KOL, only community-driven tokenomics.
+                  children and youth are in foster <br />
+                  care on any given day in the U.S. 
                 </p>
-                <ul className="space-y-4 text-gray-600 font-light md:text-xl">
+                {/* <ul className="space-y-4 text-gray-600 font-light md:text-xl">
       {["80% Circulating Supply", "20% Marketing & Events"].map((item, index) => (
         <li key={index} className="flex items-center gap-2">
           <Image src={tick} alt="Tick Icon" width={24} height={20} />
           {item}
         </li>
       ))}
-    </ul>
+    </ul> */}
               </div>
             </div>
 
@@ -113,12 +107,13 @@ const TimelineSection = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">AWARENESS & DONATIONS</h2>
+                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">NEARLY 60%</h2>
                 <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
-                  Our initial goal is to build our community using the TOYS coin as a way to drive awareness 
-                  and adoption in order to increase toy donations. We will accomplish this with 3 core strategies.
+                  of foster children enter are<br />
+                  with no personal belongings<br />
+                  beyond what they&apos;re wearing.
                 </p>
-                <ul className="space-y-4 text-gray-600 font-light md:text-lg">
+                {/* <ul className="space-y-4 text-gray-600 font-light md:text-lg">
       {[
         "Partnerships & Sponsors",
         "Social Media Growth",
@@ -129,7 +124,7 @@ const TimelineSection = () => {
           {item}
         </li>
       ))}
-    </ul>
+    </ul> */}
               </div>
             </div>
 
@@ -141,14 +136,17 @@ const TimelineSection = () => {
                   alt="National Expansion" 
                   className="w-full max-w-4xl "
                 />
-              </div>
+              </div> 
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">NATIONAL EXPANSION</h2>
+                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">NEARLY HALF</h2>
                 <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
-                  We will implement the necessary strategies to ensure seamless expansion of 
-                  partnerships throughout the United States.
+                  of all children in foster care are 
+                  under ge 10, with toddlers and
+                  preschoolers making up a
+                  significant share of new 
+                  placements.
                 </p>
-                <ul className="space-y-4 text-gray-600 font-light md:text-lg">
+                {/* <ul className="space-y-4 text-gray-600 font-light md:text-lg">
       {[
         "Recruit Volunteers",
         "Expand Foster Care Network",
@@ -159,7 +157,7 @@ const TimelineSection = () => {
           {item}
         </li>
       ))}
-    </ul>
+    </ul> */}
               </div>
             </div>
           </div>

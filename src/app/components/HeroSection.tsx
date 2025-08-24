@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import hero from "@/assets/hero.jpg";
-import logo from "@/assets/logo.svg";
+import hero from "@/assets/hero.jpeg";
 
 function HeroSection() {
   return (
@@ -13,9 +12,6 @@ function HeroSection() {
         objectFit="cover"
         className="z-0"
       />
-      <div className="justify-between p-8 flex items-center">
-        <Image src={logo} alt="Logo" width={150} height={100} className="z-10" />
-      </div>
     </div>
   )
 }

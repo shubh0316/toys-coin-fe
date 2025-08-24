@@ -8,9 +8,8 @@ import panda from "@/assets/panda.png";
 
 function DonationSection() {
   return (
-    <div>
+    <div id="donate">
       <div className="relative w-full min-h-screen md:h-[850px] flex justify-center items-center">
-        {/* Background Image */}
         <Image 
           src={bg2} 
           alt="Background" 
@@ -18,8 +17,6 @@ function DonationSection() {
           objectFit="cover" 
           className="absolute -z-10" 
         />
-
-        {/* Centered Content */}
         <Container> 
           <div className="flex md:flex-row flex-col justify-center items-center h-full md:pb-0 pb-4">
             <Image src={amazon} width={480} alt="Amazon Logo" className= '' />
@@ -30,7 +27,7 @@ function DonationSection() {
                   <div className='font-frank text-2xl md:text-4xl text-[#2D2B42]'>
                     DONATIONS MADE THROUGH AMAZON
                   </div>
-                  <p className='text-lg leading-8 font-light text-[#2D2B42]'>Donating toys and essential items is easy when ordering through Amazon. Donations can be shipped directly to a vetted foster care agency. </p>
+                  <p className='text-lg leading-8 font-light text-[#2D2B42]'>Donating is great for everyone when you order through Amazon. You can easily shop for a donation from a wishlist of requested items by our foster care agency partners!</p>
                  </div>
               </div>
 
