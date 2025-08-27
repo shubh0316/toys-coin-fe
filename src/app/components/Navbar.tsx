@@ -15,9 +15,9 @@ const Navbar = () => {
     <div className="sticky top-0 z-50">
       <nav className="hidden md:flex bg-[#2D2B42] text-white justify-between items-center p-4">
         <div className="flex items-center">
-          <Image src={logoNav} alt="Logo" className="w-[400px] mr-3" />
+          <Image src={logoNav} alt="Logo" className="w-[400px] lg:w-[500px]  md:w-[400px] mr-3" />
         </div>
-        <ul className="flex space-x-6 font-frank font-6xl">
+        <ul className="flex space-x-6 font-frank text-2xl xl:text-2xl">
           <li>
             <button
               onClick={() => scrollToSection("our-mission")}

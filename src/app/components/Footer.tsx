@@ -83,6 +83,7 @@ const Footer = () => {
                     </DialogTitle>
                     <p className="text-sm  text-black font-inter">
                     Please fill out the form and someone from the right department will get back to you or give us a call at<br /> (916) 384-0330.</p>
+                    <p className="text-sm  text-black font-inter">FOSTER TOYS IS A PENDING 501(c)3 TAX EXEMPT CHARITY ORGANIZATION TAX ID 39-3621457</p>
                   </DialogHeader>
                   <form className="space-y-8 mt-4">
                     <div className="flex flex-col gap-2">
