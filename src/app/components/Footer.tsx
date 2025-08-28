@@ -64,7 +64,7 @@ const Footer = () => {
                     whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "tween", stiffness: 300 }}
-                    className="bg-[#2D2B42] lg:px-4 lg:py-3   2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
+                    className="bg-[#2D2B42] lg:px-4 lg:py-3 px-4  py-3  2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
                   >
                     <span className="text-sm lg:text-base 2xl:text-xl md:text-base">Contact Us</span>
                     <Image
@@ -138,7 +138,7 @@ const Footer = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "tween", stiffness: 300 }}
                 onClick={handleAgencyLogin}
-                className="bg-[#2D2B42] lg:px-4 lg:py-3   2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
+                className="bg-[#2D2B42] lg:px-4 lg:py-3 px-4  py-3  2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
               >
                 <span className="text-sm lg:text-base 2xl:text-xl md:text-base">Agency Login</span>
                 <Image
@@ -153,7 +153,7 @@ const Footer = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "tween", stiffness: 300 }}
                 onClick={handleVolunteerLogin}
-                className="bg-[#2D2B42] lg:px-4 lg:py-3   2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
+                className="bg-[#2D2B42] lg:px-4 lg:py-3 px-4  py-3  2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
               >
                 <span className="text-sm lg:text-base 2xl:text-xl md:text-base">Volunteer Login</span>
                 <Image

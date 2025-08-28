@@ -21,7 +21,7 @@ const DonationSection = () => {
   return (
     <div
       ref={container}
-      className="relative w-full lg:h-[950px] 2xl:h-[1100px] flex items-center justify-center"
+      className="relative w-full h-[950px] lg:h-[950px] 2xl:h-[1100px] flex items-center justify-center"
     >
       {/* Background Image */}
       <Image
@@ -33,7 +33,7 @@ const DonationSection = () => {
 
       {/* Centered Animated Text */}
       <Container>
-        <p className="relative font-frank text-start lg:text-8xl 2xl:text-9xl font-bold flex flex-wrap">
+        <p className="relative font-frank text-start text-6xl lg:text-8xl 2xl:text-9xl font-bold flex flex-wrap">
           {/* Normal text before (always white) */}
           <span className="mr-3 mt-3 text-white">{textBefore}</span>
 
