@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import photo1 from "@/assets/photo1.png";
 import photo2 from "@/assets/photo2.png";
-import photo3 from "@/assets/photo3.png";
+import photo3 from "@/assets/photo3.jpeg";
 import timeline from "@/assets/timeline.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,18 +47,18 @@ const TimelineSection = () => {
   }, []);
 
   return (
-    <div id="did-you-know" className="bg-[#F9EFE0] font-inter py-10">
+    <div id="did-you-know" className="bg-[#F9EFE0] font-inter py-10 lg:py-16 2xl:py-20">
       <Container>
         {/* Header Section */}
         <div className="text-center">
-          <h1 className="text-4xl md:text-9xl font-bold font-frank text-[#2D2B42] mt-6 leading-wide tracking-wider">
+          <h1 className="text-6xl lg:text-8xl 2xl:text-9xl font-bold font-frank text-[#2D2B42] mt-6 lg:mt-10 xl:mt-12 leading-wide tracking-wider">
             DID YOU KNOW?
           </h1>
-          <p className="text-xl font-bold font-frank leading-tight text-[#2D2B42] tracking-wider">2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES</p>
+          <p className="text-xl lg:text-2xl 2xl:text-4xl font-bold font-frank leading-tight text-[#2D2B42] tracking-wider">2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES</p>
         </div>
 
         {/* Timeline Section */}
-        <div className="mt-20 relative">
+        <div className="mt-20 lg:mt-28 xl:mt-32 relative">
           {/* Timeline Image */}
           <div className="absolute inset-0 flex justify-center z-0">
             <Image 
@@ -66,23 +66,23 @@ const TimelineSection = () => {
               alt="Timeline" 
               width={156} 
               height={10}
-              className="hidden md:block"
+              className="hidden md:block lg:w-auto xl:w-auto"
             />
           </div>
 
-          <div className="relative z-10 space-y-40">
+          <div className="relative z-10 space-y-40 lg:space-y-8 2xl:space-y-6">
             {/* FAIR LAUNCH */}
-            <div ref={fairLaunchRef} className="flex flex-col md:flex-row gap-8 md:gap-64 items-center">
+            <div ref={fairLaunchRef} className="flex flex-col md:flex-row gap-8 md:gap-64 lg:gap-80 xl:gap-96 items-center">
               <div className="w-full md:w-1/2 flex justify-center">
                 <Image 
                   src={photo1} 
                   alt="Fair Launch" 
-                  className="w-full max-w-4xl "
+                  className="w-full max-w-4xl lg:max-w-5xl 2xl:max-w-8xl"
                 />
               </div>
-              <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">OVER 400,000</h2>
-                <p className="text-md md:text-xl text-[#2D2B42] font-light ">
+              <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
+                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">OVER 400,000</h2>
+                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-[#2D2B42] font-light lg:leading-relaxed xl:leading-relaxed">
                   children and youth are in foster <br />
                   care on any given day in the U.S. 
                 </p>
@@ -98,17 +98,17 @@ const TimelineSection = () => {
             </div>
 
             {/* AWARENESS & DONATIONS */}
-            <div ref={awarenessRef} className="flex flex-col md:flex-row-reverse gap-8 md:gap-64 items-center">
+            <div ref={awarenessRef} className="flex flex-col md:flex-row-reverse gap-8 md:gap-64 lg:gap-80 xl:gap-96 items-center">
               <div className="w-full md:w-1/2 flex justify-center">
                 <Image 
                   src={photo2} 
                   alt="Awareness & Donations" 
-                  className="w-full max-w-4xl "
+                  className="w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl"
                 />
               </div>
-              <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">NEARLY 60%</h2>
-                <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
+              <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
+                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY 60%</h2>
+                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light leading-relaxed lg:leading-relaxed xl:leading-relaxed">
                   of foster children enter are<br />
                   with no personal belongings<br />
                   beyond what they&apos;re wearing.
@@ -129,17 +129,17 @@ const TimelineSection = () => {
             </div>
 
             {/* NATIONAL EXPANSION */}
-            <div ref={expansionRef} className="flex flex-col md:flex-row gap-8 md:gap-64 items-center">
+            <div ref={expansionRef} className="flex flex-col md:flex-row gap-8 md:gap-64 lg:gap-80 xl:gap-96 items-center">
               <div className="w-full md:w-1/2 flex justify-center">
                 <Image 
                   src={photo3} 
                   alt="National Expansion" 
-                  className="w-full max-w-4xl "
+                  className="w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl"
                 />
               </div> 
-              <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-6xl font-frank text-[#2D2B42]">NEARLY HALF</h2>
-                <p className="text-lg md:text-xl text-gray-700 font-light leading-relaxed">
+              <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
+                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY HALF</h2>
+                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light leading-relaxed lg:leading-relaxed xl:leading-relaxed">
                   of all children in foster care are 
                   under ge 10, with toddlers and
                   preschoolers making up a

@@ -9,7 +9,7 @@ import panda from "@/assets/panda.png";
 function DonationSection() {
   return (
     <div id="donate">
-      <div className="relative w-full min-h-screen md:h-[850px] flex justify-center items-center">
+      <div className="relative w-full min-h-screen md:h-[850px] lg:h-[950px] xl:h-[1100px] flex justify-center items-center">
         <Image 
           src={bg2} 
           alt="Background" 
@@ -19,15 +19,15 @@ function DonationSection() {
         />
         <Container> 
           <div className="flex md:flex-row flex-col justify-center items-center h-full md:pb-0 pb-4">
-            <Image src={amazon} width={480} alt="Amazon Logo" className= '' />
-            <div className='bg-[#31CDE6] md:w-[746px]  rounded-[180px] border-4 border-white mt-6 flex justify-center items-center'>
-              <div className='flex md:flex-row flex-col p-16 gap-8 justify-between'>
-                 <Image src={panda} alt=" " width={200} /> 
-                 <div className='flex flex-col space-y-4'>
-                  <div className='font-frank text-2xl md:text-4xl text-[#2D2B42]'>
+            <Image src={amazon} width={480} alt="Amazon Logo" className='lg:w-[400px] 2xl:w-[600px]' />
+            <div className='bg-[#31CDE6] md:w-[746px] lg:w-[900px] 2xl:w-[1400px] rounded-[180px] lg:rounded-[220px] xl:rounded-[260px] border-4 lg:border-6 xl:border-8 border-white mt-6 lg:mt-8 2xl:mt-10 flex justify-center items-center'>
+              <div className='flex md:flex-row flex-col p-16 lg:p-20 2xl:p-24 gap-8 lg:gap-12 2xl:gap-16 justify-between'>
+                 <Image src={panda} alt=" " width={200} className='lg:w-[200px] 2xl:w-[320px]' /> 
+                 <div className='flex flex-col space-y-4 lg:space-y-6 2xl:space-y-8'>
+                  <div className='font-frank text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#2D2B42]'>
                     DONATIONS MADE THROUGH AMAZON
                   </div>
-                  <p className='text-lg leading-8 font-light text-[#2D2B42]'>Donating is great for everyone when you order through Amazon. You can easily shop for a donation from a wishlist of requested items by our foster care agency partners!</p>
+                  <p className='text-lg lg:text-xl 2xl:text-2xl leading-8 lg:leading-tight 2xl:leading-tight tracking-wider font-light text-[#2D2B42]'>Donating is great for everyone when you order through Amazon. You can easily shop for a donation from a wishlist of requested items by our foster care agency partners!</p>
                  </div>
               </div>
 

@@ -4,20 +4,20 @@ import Image from "next/image"
 
 const Fundraiser = () => {
   return (
-    <div id="fundraiser" className="bg-[#EFFDFF] py-16">
+    <div id="fundraiser" className="bg-[#EFFDFF] py-16 lg:py-20 xl:py-24">
       <div className="flex flex-col justify-center items-center">
         <Image 
           src={logo} 
           alt="Fundraiser Logo" 
           width={450}
-          className="md:w-[450px] w-[300px]"
+          className="md:w-[450px] w-[300px] lg:w-[550px] xl:w-[650px]"
         />
-        <div className="font-frank md:text-8xl text-4xl leading-tight tracking-wider text-[#31CDE6] mt-4">
+        <div className="font-frank md:text-8xl text-4xl lg:text-9xl xl:text-[10rem] leading-tight tracking-wider text-[#31CDE6] mt-4 lg:mt-6 xl:mt-8">
           FUNDRAISER
         </div>
         <div 
           style={{ position: "relative", overflow: "hidden", height: "500px", width: "100%", marginTop: "2rem" }}
-          className="max-w-4xl w-full"
+          className="max-w-4xl lg:max-w-5xl xl:max-w-6xl w-full"
         >
           <iframe
             title="Donation form powered by Zeffy"

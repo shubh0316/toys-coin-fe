@@ -14,26 +14,42 @@ const DonationSection = () => {
     offset: ["start end", "end start"],
   });
 
-  const text = "Dedicated to providing toys of comfort to kids entering into foster care";
-  const words = text.split(" ");
+  const textBefore = "Dedicated to providing";
+  const textAnimated = "toys of comfort";
+  const textAfter = "to kids entering into foster care";
 
   return (
-    <div ref={container} className="relative w-full h-[850px] flex items-center justify-center">
+    <div
+      ref={container}
+      className="relative w-full lg:h-[950px] 2xl:h-[1100px] flex items-center justify-center"
+    >
       {/* Background Image */}
-      <Image src={bg} alt="Background" layout="fill" objectFit="cover" className="absolute" />
+      <Image
+        src={bg}
+        alt="Background"
+        fill
+        className="absolute object-cover"
+      />
 
       {/* Centered Animated Text */}
       <Container>
-        <p className="relative font-frank text-start text-4xl lg:text-8xl font-bold text-[#31CDE6] flex flex-wrap ">
-          {words.map((word, i) => {
-            const start = i / words.length;
-            const end = start + 0.5 / words.length;
+        <p className="relative font-frank text-start lg:text-8xl 2xl:text-9xl font-bold flex flex-wrap">
+          {/* Normal text before (always white) */}
+          <span className="mr-3 mt-3 text-white">{textBefore}</span>
+
+          {/* Animated text (toys of comfort) */}
+          {textAnimated.split(" ").map((word, i) => {
+            const start = i / textAnimated.length;
+            const end = start + 0.5 / textAnimated.length;
             return (
               <Word key={i} progress={scrollYProgress} range={[start, end]}>
                 {word}
               </Word>
             );
           })}
+
+          {/* Normal text after (always white) */}
+          <span className="ml-3 mt-3 text-white">{textAfter}</span>
         </p>
       </Container>
     </div>
@@ -45,7 +61,7 @@ const Word = ({ children, progress, range }) => {
   const step = amount / children.length;
 
   return (
-    <span className="relative mr-3 mt-3">
+    <span className="relative mr-3 mt-3 lg:mr-4 lg:mt-4 xl:mr-6 xl:mt-6">
       {children.split("").map((char, i) => {
         const start = range[0] + i * step;
         const end = range[0] + (i + 1) * step;
@@ -64,10 +80,13 @@ const Char = ({ children, progress, range }) => {
 
   return (
     <span style={{ position: "relative", display: "inline-block" }}>
-      <span className="text-white" style={{ position: "absolute" }}>
-        {children}
-      </span>
-      <motion.span style={{ opacity, position: "relative" }}>
+      {/* White base text */}
+      <span className="text-white absolute">{children}</span>
+      {/* Animated blue overlay */}
+      <motion.span
+        style={{ opacity, position: "relative" }}
+        className="text-[#31CDE6]"
+      >
         {children}
       </motion.span>
     </span>

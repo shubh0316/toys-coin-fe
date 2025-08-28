@@ -13,11 +13,11 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 z-50">
-      <nav className="hidden md:flex bg-[#2D2B42] text-white justify-between items-center p-4">
+      <nav className="hidden md:flex bg-[#2D2B42] text-white justify-between items-center p-4 lg:p-6 xl:p-8">
         <div className="flex items-center">
-          <Image src={logoNav} alt="Logo" className="w-[400px] lg:w-[500px]  md:w-[400px] mr-3" />
+          <Image src={logoNav} alt="Logo" className=" mr-3 md:w-[400px] " />
         </div>
-        <ul className="flex space-x-6 font-frank text-2xl xl:text-2xl">
+        <ul className="flex space-x-6 lg:space-x-8 xl:space-x-10 font-frank text-base lg:text-2xl 2xl:text-4xl">
           <li>
             <button
               onClick={() => scrollToSection("our-mission")}
