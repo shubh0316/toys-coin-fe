@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
-import Container from './Container'
 import Image from 'next/image'
 import mission from '@/assets/teddy2.png'
 
@@ -86,7 +85,7 @@ function OurMissionSection() {
                 viewport={{ once: true }}
                 transition={{ type: 'spring', stiffness: 100 }}
               >
-                The transition into foster care is often one of the most difficult moments in a child's life. 
+                The transition into foster care is often one of the most difficult moments in a child&apos;s life. 
                 Many children enter care unexpectedly, sometimes in the middle of the night, with nothing more 
                 than the clothes they're wearing. Founded by a high school student, Aiden Kelly, Foster Toys 
                 provides toys of comfort and essential items to children on day-one of entering into foster care, 

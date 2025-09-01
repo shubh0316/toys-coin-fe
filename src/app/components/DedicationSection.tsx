@@ -5,7 +5,6 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import bg from "@/assets/bg.jpg";
-import Container from "./Container";
 
 const DonationSection = () => {
   const container = useRef<HTMLDivElement>(null);
