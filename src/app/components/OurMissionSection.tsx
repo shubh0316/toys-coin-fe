@@ -87,7 +87,7 @@ function OurMissionSection() {
               >
                 The transition into foster care is often one of the most difficult moments in a child&apos;s life. 
                 Many children enter care unexpectedly, sometimes in the middle of the night, with nothing more 
-                than the clothes they're wearing. Founded by a high school student, Aiden Kelly, Foster Toys 
+                than the clothes they&apos;re wearing. Founded by a high school student, Aiden Kelly, Foster Toys 
                 provides toys of comfort and essential items to children on day-one of entering into foster care, 
                 offering a moment of comfort during their most challenging time.
               </motion.p>
