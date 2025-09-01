@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import photo1 from "@/assets/photo1.png";
 import photo2 from "@/assets/photo2.png";
-import photo3 from "@/assets/photo3.jpeg";
+import photo3 from "@/assets/photo3.png";
 import timeline from "@/assets/timeline.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,14 +47,16 @@ const TimelineSection = () => {
   }, []);
 
   return (
-    <div id="did-you-know" className="bg-[#F9EFE0] font-inter py-10 lg:py-16 2xl:py-20">
+    
+    <div id="did-you-know" className="bg-[#F9EFE0] font-inter py-10 lg:py-16 2xl:py-20 ">
+      <div className="mb-10"> 
       <Container>
         {/* Header Section */}
         <div className="text-center">
-          <h1 className="text-6xl lg:text-8xl 2xl:text-9xl font-bold font-frank text-[#2D2B42] mt-6 lg:mt-10 xl:mt-12 leading-wide tracking-wider">
+          <h1 className="text-6xl lg:text-8xl 2xl:text-[170px] font-bold font-frank text-[#2D2B42] mt-6 lg:mt-10 xl:mt-12 leading-wide tracking-wider">
             DID YOU KNOW?
           </h1>
-          <p className="text-xl lg:text-2xl 2xl:text-4xl font-bold font-frank leading-tight text-[#2D2B42] tracking-wider">2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES</p>
+          <p className="text-xl lg:text-lg 2xl:text-3xl font-bold font-frank leading-tight text-[#2D2B42] tracking-wider">2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES</p>
         </div>
 
         {/* Timeline Section */}
@@ -81,19 +83,10 @@ const TimelineSection = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
-                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">OVER 400,000</h2>
-                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-[#2D2B42] font-light lg:leading-relaxed xl:leading-relaxed">
-                  children and youth are in foster <br />
-                  care on any given day in the U.S. 
+                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-[92px]  text-nowrap font-frank text-[#2D2B42]">OVER 400,000</h2>
+                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-[#2D2B42] !leading-[1.8] font-light max-w-lg">
+                  children and youth are in foster care on any given day in the U.S.
                 </p>
-                {/* <ul className="space-y-4 text-gray-600 font-light md:text-xl">
-      {["80% Circulating Supply", "20% Marketing & Events"].map((item, index) => (
-        <li key={index} className="flex items-center gap-2">
-          <Image src={tick} alt="Tick Icon" width={24} height={20} />
-          {item}
-        </li>
-      ))}
-    </ul> */}
               </div>
             </div>
 
@@ -108,23 +101,11 @@ const TimelineSection = () => {
               </div>
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
                 <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY 60%</h2>
-                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light leading-relaxed lg:leading-relaxed xl:leading-relaxed">
+                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.8]">
                   of foster children enter are<br />
                   with no personal belongings<br />
                   beyond what they&apos;re wearing.
                 </p>
-                {/* <ul className="space-y-4 text-gray-600 font-light md:text-lg">
-      {[
-        "Partnerships & Sponsors",
-        "Social Media Growth",
-        "Influencer Marketing",
-      ].map((item, index) => (
-        <li key={index} className="flex items-center gap-2">
-          <Image src={tick} alt="Tick Icon" width={24} height={20} />
-          {item}
-        </li>
-      ))}
-    </ul> */}
               </div>
             </div>
 
@@ -139,30 +120,19 @@ const TimelineSection = () => {
               </div> 
               <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
                 <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY HALF</h2>
-                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light leading-relaxed lg:leading-relaxed xl:leading-relaxed">
-                  of all children in foster care are 
-                  under ge 10, with toddlers and
-                  preschoolers making up a
-                  significant share of new 
+                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.8]">
+                  of all children in foster care are <br />
+                  under age 10, with toddlers<br /> and 
+                  preschoolers making up a <br />
+                  significant share of new <br />
                   placements.
                 </p>
-                {/* <ul className="space-y-4 text-gray-600 font-light md:text-lg">
-      {[
-        "Recruit Volunteers",
-        "Expand Foster Care Network",
-        "Expand Donor Marketing",
-      ].map((item, index) => (
-        <li key={index} className="flex items-center gap-2">
-          <Image src={tick} alt="Tick Icon" width={24} height={20} />
-          {item}
-        </li>
-      ))}
-    </ul> */}
               </div>
             </div>
           </div>
         </div>
       </Container>
+      </div>
     </div>
   );
 };

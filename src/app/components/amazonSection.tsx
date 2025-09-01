@@ -5,18 +5,10 @@ import amazonButton from "@/assets/amazonButton.png";
 
 const agencies = [
   {
-    name: "Children's Hope Foster Family Agency",
-    address: "3457 Colusa Hwy, Yuba City, CA 95993",
-  },
-  { name: "EA Family Services", address: "20 Bridge St, Yuba City, CA 9599" },
-  {
-    name: "Children's Hope Foster Family Agency",
-    address: "007 Live Oak Blvd Suite A2, Yuba City, CA 95991",
-  },
-  {
-    name: "El Shaddai Family Ranch Foster Family Agency",
-    address: "628 D St,  Marysville, CA 95901",
-  },
+    name: "Foster Toys",
+    address: "1100 11th Street, Sacramento, CA 95814",
+  }
+
 ];
 
 function AmazonSection() {
@@ -55,17 +47,17 @@ function AmazonSection() {
               </div>
             </div> */}
             {/* Agency Search Section */}
-            <div className="px-4 md:px-20 lg:px-32 xl:px-40 space-y-4 lg:space-y-6 xl:space-y-8 pt-10 lg:pt-16 xl:pt-20 text-center">
-              <div className="mt-4 text-center font-frank capitalize text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl leading-tight tracking-wide text-[#2D2B42]">
+            <div className="px-4 md:px-20 lg:px-32 xl:px-40 space-y-4 lg:space-y-6 xl:space-y-8 pt-10 lg:pt-16 xl:pt-20 ">
+              <div className="mt-4  font-frank capitalize text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl leading-tight tracking-wide text-[#2D2B42]">
                 <p>SHOP & SHIP DONATIONS</p>
-                <div className="md:flex md:flex-row flex-col flex items-center justify-center gap-2 lg:gap-4 xl:gap-6 mt-2 lg:mt-4 xl:mt-6 text-center">
-                  <span className="text-center">THROUGH</span>
+                <div className="md:flex md:flex-row flex-col flex  gap-2 lg:gap-4 xl:gap-6 mt-2 lg:mt-4 xl:mt-6 text-start">
+                  <span className="text-start">THROUGH</span>
                   <Image
                     src={amazonButton}
                     alt="Donate via Amazon"
-                    width={270}
+                    width={390}
                     height={80}
-                    className="md:h-auto md:w-auto w-[200px] lg:w-[320px] 2xl:w-[400px] cursor-pointer hover:scale-105 transition-transform duration-300"
+                    className="md:h-auto md:w-auto w-[200px] lg:w-[320px] 2xl:w-[480px] cursor-pointer hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="mt-4 lg:mt-6 2xl:mt-8 text-center font-frank capitalize text-3xl md:text-5xl lg:text-6xl 2xl:text-8xl leading-tight tracking-wide text-[#2D2B42]">
@@ -75,17 +67,17 @@ function AmazonSection() {
               <div className="flex justify-center">
                 <div className="w-full max-w-[800px] lg:max-w-[1000px] 2xl:max-w-[1200px]">
                   {/* Label text */}
-                  <label className="block text-[#2D2B42] text-base md:text-lg lg:text-xl 2xl:text-2xl font-medium mb-2 lg:mb-4 xl:mb-6 text-start font-frank leading-tight tracking-wider">
+                  <label className="block text-[#2D2B42] text-base md:text-lg lg:text-xl 2xl:text-3xl font-semibold  text-start font-inter leading-tight ">
                     See if there&apos;s a donation location near you.
                   </label>
 
                   <div className="flex mt-2 lg:mt-4 2xl:mt-6 text-[#2D2B42]">
                     <input
                       type="text"
-                      placeholder="ZipCode"
-                      className="px-4 py-3 lg:px-6 lg:py-4 2xl:px-8 2xl:py-5 w-full border text-[#2D2B42] border-gray-400 rounded-l-2xl lg:rounded-l-3xl 2xl:rounded-l-[32px] text-base md:text-lg lg:text-xl 2xl:text-2xl bg-transparent outline-none"
+                      placeholder="Enter the ZipCode"
+                      className="px-4 py-3 lg:px-6 lg:py-4 2xl:px-8 2xl:py-5 w-full border text-[#2D2B42] border-black rounded-l-2xl lg:rounded-l-2xl 2xl:rounded-l-2xl text-base md:text-lg lg:text-xl 2xl:text-2xl bg-transparent outline-none"
                     />
-                    <button className="px-6 py-3 lg:px-8 lg:py-4 2xl:px-10 2xl:py-5 bg-black text-white text-base md:text-lg lg:text-xl 2xl:text-2xl font-bold rounded-r-2xl lg:rounded-r-3xl 2xl:rounded-r-[32px]">
+                    <button className="px-6 py-3 lg:px-8 lg:py-4 2xl:px-10 2xl:py-5 bg-[#2D2B42] text-white text-base md:text-lg lg:text-xl 2xl:text-2xl font-bold rounded-r-2xl lg:rounded-r-2xl 2xl:rounded-r-2xl">
                       Go
                     </button>
                   </div>
@@ -98,9 +90,9 @@ function AmazonSection() {
                 </div>
               </div>
 
-              <div className="font-inter text-sm md:text-lg lg:text-lg 2xl:text-2xl text-[#2D2B42] italic">
+              {/* <div className="font-inter text-sm md:text-lg lg:text-lg 2xl:text-2xl text-[#2D2B42] italic">
                 Found {agencies.length} results:
-              </div>
+              </div> */}
 
               {/* Agency Grid */}
               <div className="md:px-20 lg:px-20 2xl:px-40">
@@ -120,7 +112,7 @@ function AmazonSection() {
                         <Image
                           src={amazonButton}
                           alt="Donate via Amazon"
-                          width={400}
+                          width={100}
                           height={150}
                           className="w-full h-auto"
                         />

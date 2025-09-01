@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Image src={logoNav} alt="Logo" className=" mr-3 md:w-[400px] " />
         </div>
-        <ul className="flex space-x-6 lg:space-x-8 xl:space-x-10 font-frank text-base lg:text-2xl 2xl:text-4xl">
+        <ul className="flex space-x-6 lg:space-x-8 xl:space-x-10 2xl:gap-16 font-frank  text-2xl lg:text-2xl 2xl:text-4xl">
           <li>
             <button
               onClick={() => scrollToSection("our-mission")}

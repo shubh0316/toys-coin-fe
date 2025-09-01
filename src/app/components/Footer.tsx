@@ -2,10 +2,11 @@
 import React from "react";
 import footerLogo from "@/assets/logoNav.png";
 import Image from "next/image";
-import icon from "@/assets/icon.png";
 import { motion } from "framer-motion";
 import twitter from "@/assets/twitter.png";
-
+import agencyButton from "@/assets/agency.png";
+import contactButton from "@/assets/contact.png";
+import volunteerButton from "@/assets/volunteer.png";
 // ✅ shadcn/ui imports
 import {
   Dialog,
@@ -26,10 +27,11 @@ const Footer = () => {
    const handleVolunteerLogin = () => {
     window.open("/v/volunteer/Login", "_blank"); 
   };
+  
   return (
     <div className="relative">
       <div className="w-full absolute -bottom-60 md:-bottom-96 bg-[#2D2B42] z-10 md:pt-0 pt-10 pb-4 md:pb-10 rounded-t-[40px] md:rounded-t-[70px]">
-        <div className="flex flex-col lg:space-y-4 md:space-y-4 2xl:space-y-10 p-4 md:p-10">
+        <div className="flex flex-col lg:space-y-4 md:space-y-4 2xl:space-y-10 sm:p-4 p-4 lg:p-20 xl:p-20 2xl:p-20 md:p-20">
           <div className="w-full max-w-[250px] lg:max-w-[600px] 2xl:max-w-[850px]">
             <Image
               src={footerLogo}
@@ -37,18 +39,18 @@ const Footer = () => {
               className="w-full h-auto"
             />
           </div>
-          <p className="font-inter text-white font-bold text-base lg:text-2xl 2xl:text-5xl w-full md:w-3/4 leading-relaxed">
+          <p className="font-inter text-white font-bold text-base lg:text-2xl 2xl:text-5xl w-full md:w-3/4 !leading-[1.4]">
             Dedicated to providing{" "}
             <span className="text-[#31CDE6]">toys of comfort</span>
             <br />
             to children entering into foster care.
           </p>
           <div className="mt-4 space-y-4">
-            <p className="text-white font-light text-xs md:text-sm lg:text-sm 2xl:text-2xl font-inter uppercase md:text-left">
-              Foster Toys Foundation is a 501(c)3 tax-exempt
+            <p className="text-white font-light text-xs md:text-sm lg:text-sm 2xl:text-lg tracking-wider font-inter uppercase md:text-left">
+              Foster Toys  is a 501(c)3 tax-exempt
               <br /> nonprofit charity organization TAX ID 39-3621457
             </p>
-            <p className="text-white text-xs md:text-sm lg:text-sm 2xl:text-lg font-inter uppercase md:text-left">
+            <p className="text-white text-xs md:text-sm lg:text-sm 2xl:text-lg font-bold font-inter uppercase md:text-left">
               ©2025 Foster Toys Foundation, All Rights Reserved
             </p>
           </div>
@@ -56,22 +58,20 @@ const Footer = () => {
 
         <div className="p-4">
           <div className="bg-[#31CDE6] mx-auto md:mt-6 h-auto md:h-[85px] lg:h-[85px] 2xl:h-[120px] rounded-3xl md:rounded-[50px] flex flex-col md:flex-row items-center justify-between p-4 md:px-4 gap-4">
-            <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-              {/* ✅ Contact Us Modal */}
+            <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto items-center">
+              {/* ✅ Contact Us Modal with image button */}
               <Dialog>
                 <DialogTrigger asChild>
                   <motion.button
-                    whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "tween", stiffness: 300 }}
-                    className="bg-[#2D2B42] lg:px-4 lg:py-3 px-4  py-3  2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
+                    className="rounded-full transition-all duration-300"
                   >
-                    <span className="text-sm lg:text-base 2xl:text-xl md:text-base">Contact Us</span>
                     <Image
-                      src={icon}
-                      alt="Icon"
-                      width={24}
-                      className="w-6 h-6 md:w-8 md:h-8 2xl:w-12 2xl:h-12"
+                      src={contactButton}
+                      alt="Contact Us"
+                      className="w-full max-w-[180px] md:max-w-[200px] lg:max-w-[220px] 2xl:max-w-[280px] h-auto"
                     />
                   </motion.button>
                 </DialogTrigger>
@@ -88,7 +88,7 @@ const Footer = () => {
                   <form className="space-y-8 mt-4">
                     <div className="flex flex-col gap-2">
                       <Label htmlFor="name">Name</Label>
-                      <Input id="name"  required className="bg-white" />
+                      <Input id="name" required className="bg-white" />
                     </div>
 
                     <div className="flex flex-col gap-2">
@@ -96,7 +96,6 @@ const Footer = () => {
                       <Input
                         id="email"
                         type="email"
-                       
                         required
                         className="bg-white"
                       />
@@ -107,7 +106,6 @@ const Footer = () => {
                       <Input
                         id="phone"
                         type="tel"
-                        
                         className="bg-white"
                       />
                     </div>
@@ -132,36 +130,34 @@ const Footer = () => {
                 </DialogContent>
               </Dialog>
 
-              {/* ✅ Other buttons remain same */}
+              {/* ✅ Agency Login with image button */}
               <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "tween", stiffness: 300 }}
                 onClick={handleAgencyLogin}
-                className="bg-[#2D2B42] lg:px-4 lg:py-3 px-4  py-3  2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
+                className="rounded-full transition-all duration-300"
               >
-                <span className="text-sm lg:text-base 2xl:text-xl md:text-base">Agency Login</span>
                 <Image
-                  src={icon}
-                  alt="Icon"
-                  width={24}
-                  className="w-6 h-6 md:w-8 md:h-8 2xl:w-12 2xl:h-12"
-                  />
+                  src={agencyButton}
+                  alt="Agency Login"
+                  className="w-full max-w-[180px] md:max-w-[200px] lg:max-w-[220px] 2xl:max-w-[280px] h-auto"
+                />
               </motion.button>
+
+              {/* ✅ Volunteer Login with image button */}
               <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "tween", stiffness: 300 }}
                 onClick={handleVolunteerLogin}
-                className="bg-[#2D2B42] lg:px-4 lg:py-3 px-4  py-3  2xl:py-6 2xl:px-8 text-white flex items-center justify-center gap-3 rounded-full transition-all duration-300 w-full md:w-auto"
+                className="rounded-full transition-all duration-300"
               >
-                <span className="text-sm lg:text-base 2xl:text-xl md:text-base">Volunteer Login</span>
                 <Image
-                  src={icon}
-                  alt="Icon"
-                  width={24}
-                  className="w-6 h-6 md:w-8 md:h-8 2xl:w-12 2xl:h-12"
-                  />
+                  src={volunteerButton}
+                  alt="Volunteer Login"
+                  className="w-full max-w-[180px] md:max-w-[200px] lg:max-w-[220px] 2xl:max-w-[280px] h-auto"
+                />
               </motion.button>
             </div>
 
@@ -180,7 +176,7 @@ const Footer = () => {
                 alt="Twitter"
                 width={24}
                 className="w-6 h-6 md:w-8 md:h-8 2xl:w-12 2xl:h-12"
-                />
+              />
             </motion.button>
           </div>
         </div>

@@ -3,97 +3,99 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Container from './Container'
 import Image from 'next/image'
-import mission from '@/assets/mission.png'
+import mission from '@/assets/teddy2.png'
 
 function OurMissionSection() {
   return (
-    <div id="our-mission" className="bg-[#F9EFE0] w-full">
-      <Container>
+    <div id="our-mission" className="relative bg-gradient-to-br from-[#F9EFE0] to-[#F5E4CF] w-full overflow-hidden">
+      <div className="mx-auto w-full max-w-[1950px]"> 
         <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-20%" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
           transition={{
-            type: "spring",
-            stiffness: 120,
-            damping: 20,
-            duration: 0.8
+            duration: 0.8,
+            ease: "easeOut"
           }}
-          className="
-            grid grid-cols-1 md:grid-cols-2 
-            items-center
-            gap-8 lg:gap-16 xl:gap-20 2xl:gap-28 
-            px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-20
-            py-10 lg:py-16 xl:py-20 2xl:py-28
-            w-full max-w-[1600px] mx-auto
-          "
+          className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-28 xl:gap-32 2xl:gap-20 py-16 lg:py-24 xl:py-32"
         >
-          {/* Image Section */}
-          <div className="flex items-center justify-center">
-            <motion.div
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 150,
-                damping: 15,
-                delay: 0.2
-              }}
-              className="w-full flex justify-center"
-            >
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: 0.2,
+              duration: 0.7,
+              ease: "easeOut"
+            }}
+            className="flex justify-center w-full lg:w-1/4 "
+          >
+            <div className="relative max-w-md">
               <Image
                 src={mission}
-                alt="Mission Image"
-                className="w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] xl:max-w-[360px] 2xl:max-w-[420px]"
+                alt="Our Mission - Supporting foster children with comfort toys"
+                className="w-full max-w-sm sm:max-w-sm md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-md rounded-2xl object-cover"
+                priority
               />
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
-          {/* Text Content */}
-          <div className="flex flex-col space-y-6 lg:space-y-8 xl:space-y-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 120,
-                damping: 20,
-                delay: 0.3
-              }}
-              className="
-                font-frank text-[#2D2B42] text-start
-                text-2xl sm:text-4xl md:text-5xl 
-                lg:text-6xl xl:text-7xl 2xl:text-8xl
-                leading-tight
-              "
-            >
-              Our Mission
-            </motion.h2>
+          <motion.div 
+            className="flex flex-col space-y-6 md:space-y-8 w-full lg:w-1/2 max-w-7xl"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: 0.4,
+              duration: 0.8,
+              ease: "easeOut"
+            }}
+          >
+            <div className="space-y-4 md:space-y-6 text-center lg:text-left">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: 0.6,
+                  duration: 0.7
+                }}
+                className="font-frank text-[#2D2B42] text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl:text-7xl 2xl:text-9xl font-bold leading-widest"
+              >
+                Our Mission
+              </motion.h2>
+            </div>
 
             <motion.div
-              className="space-y-4 lg:space-y-6 xl:space-y-8 2xl:space-y-10 text-start"
+              className="space-y-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ staggerChildren: 0.15, delayChildren: 0.4 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: 0.7,
+                staggerChildren: 0.15,
+                delayChildren: 0.8
+              }}
             >
               <motion.p
-                className="
-                  text-[#2D2B42] font-light
-                  text-base sm:text-lg md:text-xl 
-                  lg:text-xl xl:text-2xl 2xl:text-3xl
-                  leading-tight lg:leading-tight xl:leading-tight 2xl:tracking-wider
-                  max-w-[700px]
-                "
+                className="text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 
+                           leading-[1.5]  2xl:leading-[1.7] text-[#2D2B42] text-justify p-4
+                           font-light lg:text-left w-full"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 150 }}
+                viewport={{ once: true }}
+                transition={{ type: 'spring', stiffness: 100 }}
               >
-                The transition into foster care is often one of the most difficult moments in a child&apos;s life. Many children enter care unexpectedly, sometimes in the middle of the night, with nothing more than the clothes they&apos;re wearing. Founded by a high school student, Aiden Kelly, Foster Toys provides toys of comfort and essential items to children on day-one of entering into foster care.
+                The transition into foster care is often one of the most difficult moments in a child's life. 
+                Many children enter care unexpectedly, sometimes in the middle of the night, with nothing more 
+                than the clothes they're wearing. Founded by a high school student, Aiden Kelly, Foster Toys 
+                provides toys of comfort and essential items to children on day-one of entering into foster care, 
+                offering a moment of comfort during their most challenging time.
               </motion.p>
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
-      </Container>
+      </div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import hero from "@/assets/hero.jpeg";
+import hero from "@/assets/hero1.jpeg";
 
 function HeroSection() {
   return (

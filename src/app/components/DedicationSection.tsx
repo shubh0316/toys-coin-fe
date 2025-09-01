@@ -16,7 +16,8 @@ const DonationSection = () => {
 
   const textBefore = "Dedicated to providing";
   const textAnimated = "toys of comfort";
-  const textAfter = "to kids entering into foster care";
+  const textAfterLine2 = "to kids";
+  const textLine3 = "entering into foster care";
 
   return (
     <div
@@ -32,26 +33,29 @@ const DonationSection = () => {
       />
 
       {/* Centered Animated Text */}
-      <Container>
-        <p className="relative font-frank text-start text-6xl lg:text-8xl 2xl:text-9xl font-bold flex flex-wrap">
-          {/* Normal text before (always white) */}
-          <span className="mr-3 mt-3 text-white">{textBefore}</span>
+      <div className="mx-auto w-full max-w-[1950px] "> 
+        <p className="relative font-frank text-6xl  justify-center lg:text-8xl 2xl:text-9xl font-bold tracking-wider leading-tight text-start p-2  2xl:p-0">
+          {/* Line 1 */}
+          <span className="block text-white mb-6">{textBefore}</span>
 
-          {/* Animated text (toys of comfort) */}
-          {textAnimated.split(" ").map((word, i) => {
-            const start = i / textAnimated.length;
-            const end = start + 0.5 / textAnimated.length;
-            return (
-              <Word key={i} progress={scrollYProgress} range={[start, end]}>
-                {word}
-              </Word>
-            );
-          })}
+          {/* Line 2 */}
+          <span className="block xl:mb-6 2xl:mb-6 lg:mb-6 md:mb-6 mb-0">
+            {textAnimated.split(" ").map((word, i) => {
+              const start = i / textAnimated.length;
+              const end = start + 0.5 / textAnimated.length;
+              return (
+                <Word key={i} progress={scrollYProgress} range={[start, end]}>
+                  {word}
+                </Word>
+              );
+            })}
+            <span className="xl:ml-3 2xl:ml-3 md:ml-3 lg:ml-3 ml-0 text-white">{textAfterLine2}</span>
+          </span>
 
-          {/* Normal text after (always white) */}
-          <span className="ml-3 mt-3 text-white">{textAfter}</span>
+          {/* Line 3 */}
+          <span className="block  text-white">{textLine3}</span>
         </p>
-      </Container>
+        </div>
     </div>
   );
 };
@@ -61,7 +65,7 @@ const Word = ({ children, progress, range }) => {
   const step = amount / children.length;
 
   return (
-    <span className="relative mr-3 mt-3 lg:mr-4 lg:mt-4 xl:mr-6 xl:mt-6">
+    <span className="relative mr-3">
       {children.split("").map((char, i) => {
         const start = range[0] + i * step;
         const end = range[0] + (i + 1) * step;
