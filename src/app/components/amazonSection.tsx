@@ -157,9 +157,10 @@ function AmazonSection() {
                             <Image
                               src={amazon2}
                               alt="Donate via Amazon"
-                              width={100}
+                              width={400}
                               height={150}
                               className="w-full h-auto"
+                              priority
                             />
                           </div>
                         </div>
