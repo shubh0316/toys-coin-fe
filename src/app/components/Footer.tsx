@@ -29,7 +29,7 @@ const Footer = () => {
   };
   
   return (
-    <div className="relative">
+    <div className="relative mt-20">
       <div className="w-full absolute -bottom-60 md:-bottom-96 bg-[#2D2B42] z-10 md:pt-0 pt-10 pb-4 md:pb-10 rounded-t-[40px] md:rounded-t-[70px]">
         <div className="flex flex-col lg:space-y-4 md:space-y-4 2xl:space-y-10 sm:p-4 p-4 lg:p-20 xl:p-20 2xl:p-20 md:p-20">
           <div className="w-full max-w-[250px] lg:max-w-[600px] 2xl:max-w-[850px]">
@@ -51,7 +51,7 @@ const Footer = () => {
               <br /> nonprofit charity organization TAX ID 39-3621457
             </p>
             <p className="text-white text-xs md:text-sm lg:text-sm 2xl:text-lg font-bold font-inter uppercase md:text-left">
-              ©2025 Foster Toys Foundation, All Rights Reserved
+              ©2025 Foster Toys, All Rights Reserved
             </p>
           </div>
         </div>
@@ -83,7 +83,6 @@ const Footer = () => {
                     </DialogTitle>
                     <p className="text-sm  text-black font-inter">
                     Please fill out the form and someone from the right department will get back to you or give us a call at<br /> (916) 384-0330.</p>
-                    <p className="text-sm  text-black font-inter">FOSTER TOYS IS A PENDING 501(c)3 TAX EXEMPT CHARITY ORGANIZATION TAX ID 39-3621457</p>
                   </DialogHeader>
                   <form className="space-y-8 mt-4">
                     <div className="flex flex-col gap-2">

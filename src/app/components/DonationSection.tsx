@@ -27,7 +27,7 @@ function DonationSection() {
                   <div className='font-frank text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-wrap text-[#2D2B42]'>
                     DONATIONS MADE THROUGH AMAZON
                   </div>
-                  <p className='text-lg lg:text-2xl 2xl:text-3xl  leading-[1.6] tracking- font-light text-[#2D2B42] '>Donating is great for everyone when <br />you order through Amazon. You can<br /> easily shop for a donation from a<br /> wishlist of requested items by our<br /> foster care agency partners!</p>
+                  <p className='text-lg lg:text-2xl 2xl:text-3xl  !leading-[1.5] tracking- font-light text-[#2D2B42] '>Donating is great for everyone when <br />you order through Amazon. You can<br /> easily shop for a donation from a<br /> wishlist of requested items by our<br /> foster care agency partners!</p>
                  </div>
               </div>
 

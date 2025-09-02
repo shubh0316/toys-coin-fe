@@ -12,16 +12,16 @@ import Fundraiser from "./components/Fundraiser";
 export default function Home() {
   return (
     <>
-    <Navbar />
-    <HeroSection />
-    <OurMissionSection />
+     <Navbar />
+     <HeroSection />
+     <OurMissionSection />
      <DedicationSection />
-    <TimelineSection />
+     <TimelineSection />
      <DonationSection />
      <AmazonSection />
      <Fundraiser />
-    <VolunteerSection />
-    <Footer />    
+     <VolunteerSection />
+     <Footer />    
     </>
   );
 }

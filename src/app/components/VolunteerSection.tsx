@@ -31,7 +31,7 @@ const VolunteerSection = () => {
                 <Image 
                   src={Buttons} 
                   alt="Volunteer Button" 
-                  className="w-full h-auto 2xl:mb-0 xl:mb-0 lg:mb-0 md:mb-0 sm:mb-0 mb-[200px]"
+                  className="w-full h-auto "
                 />
                 </button>
               </div>
