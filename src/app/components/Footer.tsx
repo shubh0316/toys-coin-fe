@@ -47,7 +47,7 @@ const Footer = () => {
           </p>
           <div className="mt-4 space-y-4">
             <p className="text-white font-light text-xs md:text-sm lg:text-sm 2xl:text-lg tracking-wider font-inter uppercase md:text-left">
-              Foster Toys  is a 501(c)3 tax-exempt
+              Foster Toys  is a  pending 501(c)3 tax-exempt
               <br /> nonprofit charity organization TAX ID 39-3621457
             </p>
             <p className="text-white text-xs md:text-sm lg:text-sm 2xl:text-lg font-bold font-inter uppercase md:text-left">

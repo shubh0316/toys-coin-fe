@@ -3,7 +3,7 @@
 import { Toaster } from "sonner";
 import Image from "next/image";
 import { ReactNode } from "react";
-import logo_foundation from "@/assets/formLogo.png";
+import logo_foundation from "@/assets/foster_foundation.png";
 
 
 export default function Layout({ children }: { children: ReactNode }) {
