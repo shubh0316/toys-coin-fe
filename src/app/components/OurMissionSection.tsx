@@ -78,7 +78,7 @@ function OurMissionSection() {
             >
               <motion.p
                 className="text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 
-                           leading-[1.5]  2xl:leading-[1.7] text-[#2D2B42] text-justify p-4
+                           !leading-[1.6]  2xl:leading-[1.7] text-[#2D2B42] text-justify p-4
                            font-light lg:text-left w-full"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}

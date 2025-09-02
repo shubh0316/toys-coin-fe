@@ -80,14 +80,14 @@ function AmazonSection() {
                         placeholder="Enter your Zip Code here"
                         value={zipCode}
                         onChange={(e) => setZipCode(e.target.value)}
-                        className="px-4 py-3 lg:px-6 lg:py-4 2xl:px-8 2xl:py-5 w-full border text-[#2D2B42] border-black rounded-2xl text-base md:text-lg lg:text-xl 2xl:text-2xl bg-transparent outline-none"
+                        className="px-4 py-3 lg:px-6 lg:py-3 2xl:px-8 2xl:py-5 w-full border text-[#2D2B42] border-black rounded-2xl text-base md:text-lg lg:text-xl 2xl:text-2xl bg-transparent outline-none"
                       />
                     </div>
                     
                     {/* Distance Dropdown */}
                     <div className="flex-">
   <Select value={distance} onValueChange={setDistance}>
-    <SelectTrigger className="h-full mr-10 w-full border border-black text-base md:text-lg lg:text-xl 2xl:text-2xl bg-transparent rounded-2xl px-4 py-3 lg:px-6 lg:py-4 2xl:px-8 2xl:py-5">
+    <SelectTrigger className="h-full mr-10 w-full border border-black text-base md:text-lg lg:text-xl 2xl:text-2xl bg-transparent rounded-2xl px-4 py-3 lg:px-6 lg:py-3 2xl:px-8 2xl:py-5">
       <SelectValue 
         placeholder="Distance" 
         className="text-gray-400 font-light" 
@@ -107,7 +107,7 @@ function AmazonSection() {
                     <div className="flex-">
                       <button 
                         onClick={handleFindAgencies}
-                        className="px-6 py-3 lg:px-8 lg:py-4 2xl:px-10 2xl:py-5 bg-[#2D2B42] text-white text-base md:text-lg lg:text-xl 2xl:text-2xl font-bold rounded-2xl hover:bg-[#3D3B52] transition-colors duration-300 w-full h-full"
+                        className="px-6 py-3 lg:px-8 lg:py-3 2xl:px-10 2xl:py-5 bg-[#2D2B42] text-white text-base md:text-lg lg:text-lg 2xl:text-2xl font-bold rounded-2xl hover:bg-[#3D3B52] transition-colors duration-300 w-full h-full"
                       >
                         Find
                       </button>
@@ -125,10 +125,10 @@ function AmazonSection() {
               
               {/* Display search results */}
               {hasSearched && (
-                <div className="md:px-20 lg:px-20 2xl:px-10">
+                <div className="md:px-0  2xl:px-10">
                   {/* Message that appears regardless of search results */}
                   <div className="text-start py-8">
-                    <p className="text-[#2D2B42] text-lg md:text-xl lg:text-2xl mb-4 italic 2xl:text-3xl font-light !leading-[1.5]">
+                    <p className="text-[#2D2B42] text-lg md:text-xl lg:text-xl  mb-4 italic 2xl:text-3xl font-light !leading-[1.5]">
                       There are no donation locations within {distance}mi of {zipCode}. 
                       You can still click the Amazon button to shop and ship donations, 
                       and we&apos;ll take care of the rest.
@@ -139,20 +139,20 @@ function AmazonSection() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20 lg:gap-24 xl:gap-32 font-inter text-start">
                       {foundAgencies.map((agency, index) => (
                         <div key={index} className="flex flex-col space-y-4 lg:space-y-6 xl:space-y-8">
-                          <div className="flex flex-col space-y-2 lg:space-y-3 2xl:space-y-2">
-                            <div className="text-[#2D2B42] font-semibold text-base md:text-xl lg:text-xl 2xl:text-3xl">
+                          <div className="flex flex-col space-y-2 lg:space-y- 2xl:space-y-2">
+                            <div className="text-[#2D2B42] font-semibold text-base md:text-xl lg:text-lg 2xl:text-3xl">
                               {agency.name}
                             </div>
-                            <div className="text-[#2D2B42] text-sm md:text-lg lg:text-xl 2xl:text-2xl w-1/2 lg:w-2/3 xl:w-3/4 2xl:1/2 leading-8 lg:leading-relaxed xl:leading-relaxed font-light">
+                            <div className="text-[#2D2B42] text-sm md:text-lg lg:text-lg 2xl:text-2xl w-1/2 lg:w-2/3 xl:w-3/4 2xl:1/2 leading-8 lg:leading-relaxed xl:leading-relaxed font-light">
                              
                               {agency.address}
                             </div>
-                            <div className="text-[#2D2B42] text-sm md:text-lg lg:text-xl 2xl:text-2xl w-1/2 lg:w-2/3 xl:w-3/4 leading-8 lg:leading-relaxed xl:leading-relaxed font-light">
+                            <div className="text-[#2D2B42] text-sm md:text-lg lg:text-lg 2xl:text-2xl w-1/2 lg:w-2/3 xl:w-3/4 leading-8 lg:leading-relaxed xl:leading-relaxed font-light">
 
                               {agency.phone}
                             </div>
                           </div>
-                          <div className="w-full max-w-[350px] lg:max-w-[450px] xl:max-w-[550px]">
+                          <div className="w-full max-w-[350px] lg:max-w-[250px] 2xl:max-w-[550px]">
                             <Image
                               src={amazonButton}
                               alt="Donate via Amazon"

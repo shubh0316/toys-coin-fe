@@ -17,7 +17,7 @@ const Fundraiser = () => {
         </div>
         <div 
           style={{ position: "relative", overflow: "hidden", height: "500px", width: "100%", marginTop: "2rem" }}
-          className="max-w-4xl lg:max-w-5xl xl:max-w-6xl w-full"
+          className="max-w-4xl lg:max-w-5xl xl:max-w-6xl  w-full"
         >
           <iframe
             title="Donation form powered by Zeffy"
