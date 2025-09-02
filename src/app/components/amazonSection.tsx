@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import amazon2 from "@/assets/amazon2.png";
 
 const agencies = [
   {
@@ -154,7 +155,7 @@ function AmazonSection() {
                           </div>
                           <div className="w-full max-w-[350px] lg:max-w-[250px] 2xl:max-w-[550px]">
                             <Image
-                              src={amazonButton}
+                              src={amazon2}
                               alt="Donate via Amazon"
                               width={100}
                               height={150}
