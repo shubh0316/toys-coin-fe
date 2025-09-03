@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Toys Coin",
+  title: "Foster Toys",
   description: "Dedicated to providing toys of comfort to over 400,000 kids entering into foster care.",
 };
 
