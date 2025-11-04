@@ -3,7 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import mission from '@/assets/teddy2.png'
-import OurMission from '@/assets/OurMission.png'
+import OurMission from '@/assets/ourMission.png'
 
 
 function OurMissionSection() {
