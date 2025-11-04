@@ -18,5 +18,7 @@ body {
 .font-frank {
   font-family: 'Frankfurter Std', 'inter';
 }
-
+.font-arial {
+  font-family: var(--font-arial);
+}
 

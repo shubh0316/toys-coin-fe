@@ -11,20 +11,20 @@ function MonetarySection() {
       <div className="bg-[#F9EFE0]">
         <Container>
           {/* Title Section */}
-          <div className="flex mt-10 justify-start md:justify-around">
-            <div className="font-frank text-center text-[#2D2B42] text-5xl md:text-8xl">
+          <div className="flex mt-8 md:mt-10 lg:mt-10 justify-start md:justify-center lg:justify-around">
+            <div className="font-frank text-center text-[#2D2B42] text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight">
               MONETARY DONATIONS
             </div>
           </div>
 
           <Container> 
             {/* Main Content */}
-            <div className="mt-10">
-              <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-4">
+            <div className="mt-8 md:mt-10 lg:mt-10">
+              <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-6 lg:gap-4">
                 {/* Left Column */}
-                <div className="mt-4 md:mt-10 w-full md:w-auto">
-                  <div className="flex flex-col space-y-6 md:space-y-8 items-start md:items-start">
-                    <div className="w-full max-w-[600px]  md:p-0">
+                <div className="mt-4 md:mt-6 lg:mt-10 w-full md:w-auto">
+                  <div className="flex flex-col space-y-6 md:space-y-6 lg:space-y-8 items-start md:items-start">
+                    <div className="w-full max-w-[600px] md:max-w-[550px] lg:max-w-[600px] md:p-0">
                       <Image 
                         src={logo} 
                         alt="Logo" 
@@ -32,13 +32,13 @@ function MonetarySection() {
                         className="w-full h-auto"
                       />
                     </div>
-                    <div className="font-light leading-8 text-lg md:text-xl text-[#2D2B42]  md:px-0">
+                    <div className="font-light leading-7 md:leading-8 text-lg md:text-lg lg:text-xl text-[#2D2B42] md:px-0">
                       For monetary donations we encourage you to consider showing
                       your support by buying the TOYS coin. It helps us to grow
                       our community and build awareness for the Toys Coin
                       Foundation.
                     </div>
-                    <div className="w-full max-w-[600px] md:p-0">
+                    <div className="w-full max-w-[600px] md:max-w-[550px] lg:max-w-[600px] md:p-0">
                       <Image 
                         src={dexButton} 
                         alt="DEX Button" 
@@ -50,8 +50,8 @@ function MonetarySection() {
                 </div>
 
                 {/* Right Column (QR Code) */}
-                <div className="flex flex-col space-y-4 items-center justify-center">
-                  <div className="w-full max-w-[400px] md:max-w-[600px]  md:p-0">
+                <div className="flex flex-col space-y-4 md:space-y-4 lg:space-y-4 items-center justify-center">
+                  <div className="w-full max-w-[400px] md:max-w-[450px] lg:max-w-[500px] xl:max-w-[600px] md:p-0">
                     <Image 
                       src={qr} 
                       alt="QR Code" 
@@ -59,7 +59,7 @@ function MonetarySection() {
                       className="w-full h-auto"
                     />
                   </div>
-                  <p className="text-[#2D2B42] text-center font-semibold text-xl md:text-2xl mt-0 md:mt-4">
+                  <p className="text-[#2D2B42] text-center font-semibold text-xl md:text-xl lg:text-2xl mt-0 md:mt-2 lg:mt-4">
                     Buy TOYS
                   </p>
                 </div>
@@ -68,8 +68,8 @@ function MonetarySection() {
           </Container>
 
           {/* Trading Image */}
-          <div className="flex justify-center mt-10 md:mt-20 pb-10 md:pb-20">
-            <div className="w-full max-w-[1200px] md:px-0">
+          <div className="flex justify-center mt-8 md:mt-12 lg:mt-16 xl:mt-20 pb-8 md:pb-16 lg:pb-18 xl:pb-20">
+            <div className="w-full max-w-[1200px] md:px-4 lg:px-0">
               <Image 
                 src={trading} 
                 alt="Trading" 

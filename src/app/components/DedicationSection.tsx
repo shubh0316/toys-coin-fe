@@ -21,7 +21,7 @@ const DonationSection = () => {
   return (
     <div
       ref={container}
-      className="relative w-full h-[950px] lg:h-[950px] 2xl:h-[1100px] flex items-center justify-center"
+      className="relative w-full h-[600px] sm:h-[700px] md:h-[750px] lg:h-[850px] xl:h-[950px] 2xl:h-[1100px] flex items-center justify-center"
     >
       {/* Background Image */}
       <Image
@@ -31,14 +31,17 @@ const DonationSection = () => {
         className="absolute object-cover"
       />
 
-      {/* Centered Animated Text */}
-      <div className="mx-auto w-full max-w-[1950px] "> 
-        <p className="relative font-frank text-6xl  justify-center lg:text-8xl 2xl:text-9xl font-bold tracking-wider leading-tight text-start p-2  2xl:p-0">
-          {/* Line 1 */}
-          <span className="block text-white mb-6">{textBefore}</span>
+      {/* Mobile View */}
+      <div className="lg:hidden mx-auto w-full max-w-[1950px] px-4 sm:px-6 md:px-8"> 
+        <p className="relative font-frank text-3xl sm:text-5xl md:text-5xl font-bold tracking-wider leading-tight text-start p-2 md:p-3">
+          {/* Line 1: dedicated */}
+          <span className="block text-white mb-3 sm:mb-4 md:mb-4">dedicated</span>
 
-          {/* Line 2 */}
-          <span className="block xl:mb-6 2xl:mb-6 lg:mb-6 md:mb-6 mb-0">
+          {/* Line 2: to providing */}
+          <span className="block text-white mb-3 sm:mb-4 md:mb-4">to providing</span>
+
+          {/* Line 3: toys of comfort (animated) */}
+          <span className="block mb-3 sm:mb-4 md:mb-4">
             {textAnimated.split(" ").map((word, i) => {
               const start = i / textAnimated.length;
               const end = start + 0.5 / textAnimated.length;
@@ -48,13 +51,40 @@ const DonationSection = () => {
                 </Word>
               );
             })}
-            <span className="xl:ml-3 2xl:ml-3 md:ml-3 lg:ml-3 ml-0 text-white">{textAfterLine2}</span>
+          </span>
+
+          {/* Line 4: to kids entering */}
+          <span className="block text-white mb-3 sm:mb-4 md:mb-4">to kids entering</span>
+
+          {/* Line 5: into foster care. */}
+          <span className="block text-white">into foster care.</span>
+        </p>
+      </div>
+
+      {/* Desktop/Laptop View - Hidden on mobile */}
+      <div className="hidden lg:block mx-auto w-full max-w-[1950px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"> 
+        <p className="relative font-frank text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl font-bold tracking-wider leading-tight text-start p-2 lg:p-3 xl:p-4 2xl:p-0">
+          {/* Line 1 */}
+          <span className="block text-white mb-3 lg:mb-4 xl:mb-5 2xl:mb-6">{textBefore}</span>
+
+          {/* Line 2 */}
+          <span className="block mb-3 lg:mb-4 xl:mb-5 2xl:mb-6">
+            {textAnimated.split(" ").map((word, i) => {
+              const start = i / textAnimated.length;
+              const end = start + 0.5 / textAnimated.length;
+              return (
+                <Word key={i} progress={scrollYProgress} range={[start, end]}>
+                  {word}
+                </Word>
+              );
+            })}
+            <span className="ml-2 lg:ml-2.5 xl:ml-3 2xl:ml-3 text-white">{textAfterLine2}</span>
           </span>
 
           {/* Line 3 */}
-          <span className="block  text-white">{textLine3}</span>
+          <span className="block text-white">{textLine3}</span>
         </p>
-        </div>
+      </div>
     </div>
   );
 };
@@ -64,7 +94,7 @@ const Word = ({ children, progress, range }) => {
   const step = amount / children.length;
 
   return (
-    <span className="relative mr-3">
+    <span className="relative mr-2 sm:mr-2 md:mr-2 lg:mr-2.5 xl:mr-3">
       {children.split("").map((char, i) => {
         const start = range[0] + i * step;
         const end = range[0] + (i + 1) * step;

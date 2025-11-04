@@ -48,17 +48,25 @@ const TimelineSection = () => {
 
   return (
     
-    <div id="did-you-know" className="bg-[#F9EFE0] font-inter py-10 lg:py-16 2xl:py-20 ">
-      <div className="mb-10"> 
+    <div id="did-you-know" className="bg-[#F9EFE0] font-inter py-4 sm:py-8 md:py-10 lg:py-14 xl:py-16 2xl:py-20">
+      <div className="mb-6 sm:mb-8 md:mb-8 lg:mb-10"> 
       <Container>
         <div className="text-center">
-          <h1 className="text-6xl lg:text-8xl 2xl:text-[170px] font-bold font-frank text-[#2D2B42] mt-6 lg:mt-10 xl:mt-12 leading-wide tracking-wider">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-[170px] font-bold font-frank text-[#2D2B42] mt-4 sm:mt-6 md:mt-6 lg:mt-8 xl:mt-10 2xl:mt-12 leading-tight sm:leading-wide tracking-wider">
             DID YOU KNOW?
           </h1>
-          <p className="text-xl lg:text-lg 2xl:text-3xl font-bold font-frank leading-tight text-[#2D2B42] tracking-wider">2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES</p>
+          {/* Mobile View - Structured Text */}
+          <div className="lg:hidden mt-3 sm:mt-4 md:mt-4">
+            <p className="text-base sm:text-lg md:text-lg font-bold font-frank leading-tight text-[#2D2B42] tracking-normal">
+              <span className="block">2024 data from the U.S. Department</span>
+              <span className="block">of Health and Human Services</span>
+            </p>
+          </div>
+          {/* Desktop View - Single Line */}
+          <p className="hidden lg:block text-base lg:text-lg xl:text-xl 2xl:text-3xl font-bold font-frank leading-tight text-[#2D2B42] tracking-wider mt-3 sm:mt-4 lg:mt-4">2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES</p>
         </div>
 
-        <div className="mt-20 lg:mt-28 xl:mt-32 relative">
+        <div className="mt-12 sm:mt-14 md:mt-16 lg:mt-24 xl:mt-28 2xl:mt-32 relative px-4 sm:px-6 md:px-6">
           <div className="absolute inset-0 flex justify-center z-0">
             <Image 
               src={timeline} 
@@ -69,49 +77,49 @@ const TimelineSection = () => {
             />
           </div>
 
-          <div className="relative z-10 space-y-40 lg:space-y-8 2xl:space-y-6">
-            <div ref={fairLaunchRef} className="flex flex-col md:flex-row gap-8 md:gap-64 lg:gap-80 xl:gap-96 items-center">
+          <div className="relative z-10 space-y-16 sm:space-y-18 md:space-y-20 lg:space-y-12 xl:space-y-8 2xl:space-y-6">
+            <div ref={fairLaunchRef} className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-40 xl:gap-64 2xl:gap-96 items-center">
               <div className="w-full md:w-1/2 flex justify-center">
                 <Image 
                   src={photo1} 
                   alt="Fair Launch" 
-                  className="w-full max-w-4xl lg:max-w-5xl 2xl:max-w-8xl"
+                  className="w-full max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl xl:max-w-4xl 2xl:max-w-8xl"
                 />
               </div>
-              <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-4">
-                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-[90px] leading-tight  text-nowrap font-frank  text-[#2D2B42]">OVER 400,000</h2>
-                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-[#2D2B42] !leading-[1.8] font-light max-w-4xl">
+              <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8 2xl:space-y-4">
+                <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[90px] leading-tight font-frank text-[#2D2B42]">OVER 400,000</h2>
+                <p className="text-lg sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-3xl text-[#2D2B42] !leading-[1.7] sm:!leading-[1.8] md:!leading-[1.7] lg:!leading-[1.7] font-light max-w-4xl">
                 children and youth are in foster care on any given day in the U.S., waiting for safe, loving homes.                </p>
               </div>
             </div>
 
-            <div ref={awarenessRef} className="flex flex-col md:flex-row-reverse gap-8 md:gap-64 lg:gap-80 xl:gap-96 items-center">
+            <div ref={awarenessRef} className="flex flex-col md:flex-row-reverse gap-6 sm:gap-8 md:gap-10 lg:gap-40 xl:gap-64 2xl:gap-96 items-center">
               <div className="w-full md:w-1/2 flex justify-center">
                 <Image 
                   src={photo2} 
                   alt="Awareness & Donations" 
-                  className="w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl"
+                  className="w-full max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl"
                 />
               </div>
-              <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-4">
-                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY 60%</h2>
-                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.8] max-w-4xl">
+              <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8 2xl:space-y-4">
+                <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY 60%</h2>
+                <p className="text-lg sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.7] sm:!leading-[1.8] md:!leading-[1.7] lg:!leading-[1.7] max-w-4xl">
                 of all children in foster care are under age 10, with toddlers and preschoolers making up a significant share.
                 </p>
               </div>
             </div>
 
-            <div ref={expansionRef} className="flex flex-col md:flex-row gap-8 md:gap-64 lg:gap-80 xl:gap-96 items-center">
+            <div ref={expansionRef} className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 lg:gap-40 xl:gap-64 2xl:gap-96 items-center">
               <div className="w-full md:w-1/2 flex justify-center">
                 <Image 
                   src={photo3} 
                   alt="National Expansion" 
-                  className="w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl"
+                  className="w-full max-w-sm sm:max-w-md md:max-w-md lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl"
                 />
               </div> 
-              <div className="w-full md:w-1/2 space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
-                <h2 className="text-3xl md:text-6xl lg:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY HALF</h2>
-                <p className="text-md md:text-xl lg:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.8]">
+              <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8 2xl:space-y-10">
+                <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY HALF</h2>
+                <p className="text-lg sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.7] sm:!leading-[1.8] md:!leading-[1.7] lg:!leading-[1.7]">
                   of all children in foster care are 
                   under age 10, with toddlers and 
                   preschoolers making up a 
