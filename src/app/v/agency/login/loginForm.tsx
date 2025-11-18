@@ -52,9 +52,10 @@ const LoginForm: FC = () => {
       // Step 2: Fetch agency details using the ID
       const agencyData = await getAgencyDataById(id);
 
-      if (agencyData.status === "review") {
+      if (agencyData?.agency?.status === "review") {
         toast.dismiss(toastId);
-        router.push(`/v/agency/${id}/reviewScreen`)
+        toast.success("Your account is under review");
+        router.push(`/v/agency/${id}/reviewScreen`);
         return;
       }
       
@@ -73,20 +74,20 @@ const LoginForm: FC = () => {
   };
 
   return (
-    <div className="max-w-md mt-20 mx-auto border-2 border-gray-500 rounded-2xl p-6 shadow-md">
-      <h2 className="text-4xl font-frank mb-4 text-center">Agency Login</h2>
+    <div className="max-w-md mt-20 mx-auto border-2 border-gray-500 rounded-2xl shadow-md px-4 py-10 sm:p-8">
+      <h2 className="text-4xl font-frank mb-6 text-center">Agency Login</h2>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           {/* Email */}
           <FormField
             control={form.control}
             name="contact_email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="">Email</FormLabel>
                 <FormControl>
-                  <Input type="email" className="border-2 rounded-2xl border-gray-500 p-5" {...field} />
+                  <Input type="email" className="border-2 rounded-2xl border-gray-500 p-5 " {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -99,9 +100,9 @@ const LoginForm: FC = () => {
             name="choose_password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel className="">Password</FormLabel>
                 <FormControl>
-                  <Input type="password" className="border-2 rounded-2xl border-gray-500 p-5" {...field} />
+                  <Input type="password" className="border-2 rounded-2xl border-gray-500 p-5 " {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -109,12 +110,12 @@ const LoginForm: FC = () => {
           />
 
           {/* Forgot Password Link */}
-          <div className="flex justify-between">
-            <Link href="/v/agency/forgot-password" className="text-black-500 hover:underline">Forgot Password?</Link>
+          <div className="flex justify-between text-sm">
+            <Link href="/v/agency/forgot-password" className=" hover:underline">Forgot Password?</Link>
           </div>
 
           {/* Submit Button */}
-          <Button type="submit" disabled={loading} className="w-full">
+          <Button type="submit" disabled={loading} className="w-full rounded-2xl py-6 text-base">
             {loading ? "Logging in..." : "Login"}
           </Button>
         </form>

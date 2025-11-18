@@ -18,13 +18,13 @@ const onboardingSchema = z
     contact_person_name: z.string().min(2, "Contact person name is required"),
     contact_email: z.string().email("Invalid email address"),
     contact_phone: z.string().min(10, "Invalid phone number"),
-    shipping_address: z.string().min(5, "Address is required"),
+    zip_code: z.string().min(5, "Zip code must be at least 5 characters"),
     choose_password: z.string().min(6, "Password must be at least 6 characters"),
     repeat_password: z.string().min(6, "Password must be at least 6 characters"),
   })
   .refine((data) => data.choose_password === data.repeat_password, {
     message: "Passwords must match",
-    path: ["confirm_password"],
+    path: ["repeat_password"],
   });
 
 type OnboardingFormValues = z.infer<typeof onboardingSchema>;
@@ -40,7 +40,7 @@ const OnboardingForm: FC = () => {
       contact_person_name: "",
       contact_email: "",
       contact_phone: "",
-      shipping_address: "",
+      zip_code: "",
       choose_password: "",
       repeat_password: "",
     },
@@ -71,7 +71,7 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Contact Person</FormLabel>
               <FormControl>
-                <Input className="border-2 bg-white  border-white p-4" {...field} />
+                <Input className="rounded-2xl" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -82,7 +82,7 @@ const OnboardingForm: FC = () => {
               <FormControl>
                 <Input
                   type="email"
-                  className="border-2 bg-white  border-white p-4"
+                  className="rounded-2xl"
                   {...field}
                 />
               </FormControl>
@@ -94,16 +94,16 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input type="password" className="border-2 bg-white border-white p-4" {...field} />
+                <Input type="password" className="rounded-2xl" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField control={form.control} name="confirm_password" render={({ field }) => (
+          <FormField control={form.control} name="repeat_password" render={({ field }) => (
             <FormItem>
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <Input type="password" className="border-2 bg-white  border-white p-4" {...field} />
+                <Input type="password" className="rounded-2xl" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -112,7 +112,7 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Phone</FormLabel>
               <FormControl>
-                <Input type="tel" className="border-2 bg-white border-white p-4" {...field} />
+                <Input type="tel" className="rounded-2xl" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -121,13 +121,13 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Enter your zip code (we will match you with events within 50 miles)</FormLabel>
               <FormControl>
-                <Input className="border-2  bg-white border-white p-4" {...field} />
+                <Input className="rounded-2xl" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <div className="flex justify-end rounded-xl">
-            <Button className="mt-6" type="submit" disabled={loading}>
+          <div className="flex justify-end">
+            <Button className="w-full mt-6 rounded-2xl" type="submit" disabled={loading}>
               {loading ? "Submitting..." : "Submit"}
             </Button>
           </div>

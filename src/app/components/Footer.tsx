@@ -3,7 +3,7 @@ import React from "react";
 import footerLogo from "@/assets/logoNav.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import twitter from "@/assets/twitter.png";
+import twitter from "@/assets/facebook_white.png";
 import agencyButton from "@/assets/agency.png";
 import contactButton from "@/assets/contact.png";
 import volunteerButton from "@/assets/volunteer.png";
@@ -50,7 +50,7 @@ const Footer = () => {
           </p>
           <div className="mt-4 md:mt-5 lg:mt-4 space-y-3 md:space-y-4">
             <p className="text-white font-light text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg tracking-wider font-inter uppercase text-center md:text-left">
-              Foster Toys  is a  pending 501(c)3 tax-exempt
+              Foster Toys is a 501(c)3 tax-exempt
               <br /> nonprofit charity organization TAX ID 39-3621457
             </p>
             <p className="text-white text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg font-bold font-inter uppercase text-center md:text-left">

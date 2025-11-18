@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { forgotPassword } from "@/services/api"; 
 import { toast } from "react-hot-toast";
+import Link from "next/link";
 
 const forgotPasswordSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }), // ✅ Updated key to 'email'
@@ -35,7 +36,7 @@ const ForgotPassword: FC = () => {
       await forgotPassword(data.email); // ✅ Pass only email string
       toast.dismiss(toastId);
       toast.success("Password reset link sent! Check your email.");
-      setTimeout(() => router.push("/admin/Login"), 2000); // ✅ Redirect after success
+      setTimeout(() => router.push("/v/admin/Login"), 2000); // ✅ Redirect after success
     } catch (error: any) {
       toast.dismiss(toastId);
       toast.error(error?.message || "Failed to send reset link. Try again.");
@@ -66,9 +67,16 @@ const ForgotPassword: FC = () => {
           />
 
           {/* Submit Button */}
-          <Button type="submit" disabled={loading} className="w-full">
+          <Button type="submit" disabled={loading} className="w-full rounded-2xl">
             {loading ? "Sending..." : "Send Reset Link"}
           </Button>
+          
+          {/* Back to Login Link */}
+          <div className="text-center mt-4">
+            <Link href="/v/admin/Login" className="text-sm text-gray-600 hover:underline">
+              Back to Login
+            </Link>
+          </div>
         </form>
       </Form>
     </div>

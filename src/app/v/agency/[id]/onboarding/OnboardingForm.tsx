@@ -22,6 +22,8 @@ const onboardingSchema = z
     shipping_address: z.string().min(5, "Address is required"),
     state: z.string().min(2, "State is required"),
     zip_code: z.string().min(5, "Invalid ZIP code"),
+    amazon_private: z.string().optional(),
+    amazon_public: z.string().optional(),
     choose_password: z.string().min(6, "Password must be at least 6 characters"),
     confirm_password: z.string().min(6, "Password must be at least 6 characters"),
   })
@@ -47,6 +49,8 @@ const OnboardingForm: FC = () => {
       shipping_address: "",
       state: "",
       zip_code: "",
+      amazon_private: "",
+      amazon_public: "",
       choose_password: "",
       confirm_password: "",
     },
@@ -179,8 +183,26 @@ const OnboardingForm: FC = () => {
               <FormMessage />
             </FormItem>
           )} />
+          <FormField control={form.control} name="amazon_private" render={({ field }) => (
+            <FormItem>
+              <FormLabel>Amazon Private</FormLabel>
+              <FormControl>
+                <Input className="border-2 rounded-2xl border-gray-500 p-4" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )} />
+          <FormField control={form.control} name="amazon_public" render={({ field }) => (
+            <FormItem>
+              <FormLabel>Amazon Public</FormLabel>
+              <FormControl>
+                <Input className="border-2 rounded-2xl border-gray-500 p-4" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )} />
           <div className="flex justify-end">
-            <Button className="w-full mt-6" type="submit" disabled={loading}>
+            <Button className="w-full mt-6 rounded-2xl" type="submit" disabled={loading}>
               {loading ? "Submitting..." : "Submit"}
             </Button>
           </div>

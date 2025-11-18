@@ -46,13 +46,13 @@ const LoginForm: FC = () => {
   };
 
   return (
-    <div className="max-w-md mt-20 mx-auto border-2 border-gray-500 rounded-2xl p-6 shadow-md">
-      <h2 className="text-4xl font-frank mb-4 text-center">Admin Login</h2>
+    <div className="max-w-md mt-20 mx-auto border-2 border-gray-500 rounded-2xl shadow-md px-4 py-10 sm:p-8">
+      <h2 className="text-4xl font-frank mb-6 text-center">Admin Login</h2>
 
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           {/* Email */}
           <FormField
             control={form.control}
@@ -84,12 +84,12 @@ const LoginForm: FC = () => {
           />
 
           {/* Forgot Password Link */}
-          <div className="flex justify-between">
-            <Link href="/v/admin/forgot-password" className="text-black-500 hover:underline">Forgot Password?</Link>
+          <div className="flex justify-between text-sm">
+            <Link href="/v/admin/forgot-password" className="text-black hover:underline">Forgot Password?</Link>
           </div>
 
           {/* Submit Button */}
-          <Button type="submit" disabled={loading} className="w-full">
+          <Button type="submit" disabled={loading} className="w-full rounded-2xl py-6 text-base">
             {loading ? "Logging in..." : "Login"}
           </Button>
         </form>

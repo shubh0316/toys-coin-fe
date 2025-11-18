@@ -28,9 +28,68 @@ const InviteForm: FC = () => {
       setLoading(true);
       console.log("Sending Invite Data:", data);
 
-      toast.success("Invitation sent successfully!");
+      const response = await InviteAgency(data);
+      const {
+        emailSent,
+        invitationLink,
+        emailErrorMessage,
+        emailPreviewUrl,
+        message,
+      } = response || {};
 
-      form.reset(); // Reset form after successful submission
+      if (emailSent) {
+        toast.success(message || "Invitation sent successfully!");
+        if (emailPreviewUrl) {
+          toast.custom(
+            () => (
+              <div className="space-y-2">
+                <p className="font-semibold text-sm">Preview email:</p>
+                <a
+                  href={emailPreviewUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs text-blue-600 underline break-all"
+                >
+                  {emailPreviewUrl}
+                </a>
+              </div>
+            ),
+            { duration: 7000 }
+          );
+        }
+      } else {
+        toast.success(message || "Agency invited. Share the onboarding link manually.", {
+          duration: 6000,
+        });
+        if (invitationLink) {
+          toast.custom(
+            (t) => (
+              <div className="space-y-2">
+                <p className="font-semibold text-sm">Share this onboarding link:</p>
+                <p className="break-all text-xs">{invitationLink}</p>
+                {emailErrorMessage && (
+                  <p className="text-xs text-red-600">{emailErrorMessage}</p>
+                )}
+                {emailPreviewUrl && (
+                  <a
+                    href={emailPreviewUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs text-blue-600 underline break-all"
+                  >
+                    Preview email in browser
+                  </a>
+                )}
+              </div>
+            ),
+            { duration: 7000 }
+          );
+        } else if (emailErrorMessage) {
+          toast.error(emailErrorMessage);
+        }
+      }
+
+      form.reset(); // Reset form after submission
     } catch (error: any) {
       toast.error(error?.response?.data?.message || "Failed to send invitation");
       console.error("Error inviting agency:", error);
@@ -59,7 +118,7 @@ const InviteForm: FC = () => {
           />
           {/* Buttons */}
           <div className="flex mt-8 justify-end">
-            <Button type="submit" disabled={loading}>
+            <Button type="submit" disabled={loading} className="rounded-2xl">
               {loading ? "Sending..." : "Send"}
             </Button>
           </div>

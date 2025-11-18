@@ -52,14 +52,15 @@ const TimelineSection = () => {
       <div className="mb-6 sm:mb-8 md:mb-8 lg:mb-10"> 
       <Container>
         <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl 2xl:text-[170px] font-bold font-frank text-[#2D2B42] mt-4 sm:mt-6 md:mt-6 lg:mt-8 xl:mt-10 2xl:mt-12 leading-tight sm:leading-wide tracking-wider">
+          <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[170px] font-bold font-frank text-[#2D2B42] mt-4 sm:mt-6 md:mt-6 lg:mt-8 xl:mt-10 2xl:mt-12 leading-snug sm:leading-wide tracking-tight sm:tracking-wider">
             DID YOU KNOW?
           </h1>
           {/* Mobile View - Structured Text */}
           <div className="lg:hidden mt-3 sm:mt-4 md:mt-4">
-            <p className="text-base sm:text-lg md:text-lg font-bold font-frank leading-tight text-[#2D2B42] tracking-normal">
-              <span className="block">2024 data from the U.S. Department</span>
-              <span className="block">of Health and Human Services</span>
+            <p className="text-2xl sm:text-3xl md:text-3xl font-bold font-frank leading-snug text-[#2D2B42] tracking-tight">
+              <span className="block">
+                2024 DATA FROM THE U.S. DEPARTMENT OF HEALTH AND HUMAN SERVICES
+              </span>
             </p>
           </div>
           {/* Desktop View - Single Line */}
@@ -87,8 +88,8 @@ const TimelineSection = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8 2xl:space-y-4">
-                <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[90px] leading-tight font-frank text-[#2D2B42]">OVER 400,000</h2>
-                <p className="text-lg sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-3xl text-[#2D2B42] !leading-[1.7] sm:!leading-[1.8] md:!leading-[1.7] lg:!leading-[1.7] font-light max-w-4xl">
+                <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[90px] leading-snug font-frank text-[#2D2B42] tracking-tight">OVER 400,000</h2>
+                <p className="text-2xl sm:text-xl md:text-xl lg:text-lg xl:text-xl 2xl:text-3xl text-[#2D2B42] !leading-[1.5] sm:!leading-[1.6] md:!leading-[1.5] lg:!leading-[1.7] font-light tracking-tight max-w-4xl">
                 children and youth are in foster care on any given day in the U.S., waiting for safe, loving homes.                </p>
               </div>
             </div>
@@ -102,10 +103,9 @@ const TimelineSection = () => {
                 />
               </div>
               <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8 2xl:space-y-4">
-                <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY 60%</h2>
-                <p className="text-lg sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.7] sm:!leading-[1.8] md:!leading-[1.7] lg:!leading-[1.7] max-w-4xl">
-                of all children in foster care are under age 10, with toddlers and preschoolers making up a significant share.
-                </p>
+                <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-frank text-[#2D2B42] leading-snug tracking-tight">NEARLY 60%</h2>
+                <p className="text-2xl sm:text-xl md:text-xl lg:text-lg xl:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.5] sm:!leading-[1.6] md:!leading-[1.5] lg:!leading-[1.7] tracking-tight max-w-4xl">
+                of foster children enter care with no personal belongings beyond what they&apos;re wearing.                 </p>
               </div>
             </div>
 
@@ -118,8 +118,8 @@ const TimelineSection = () => {
                 />
               </div> 
               <div className="w-full md:w-1/2 space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8 2xl:space-y-10">
-                <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-frank text-[#2D2B42]">NEARLY HALF</h2>
-                <p className="text-lg sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.7] sm:!leading-[1.8] md:!leading-[1.7] lg:!leading-[1.7]">
+                <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-frank text-[#2D2B42] leading-snug tracking-tight">NEARLY HALF</h2>
+                <p className="text-2xl sm:text-xl md:text-xl lg:text-lg xl:text-xl 2xl:text-3xl text-gray-700 font-light !leading-[1.5] sm:!leading-[1.6] md:!leading-[1.5] lg:!leading-[1.7] tracking-tight">
                   of all children in foster care are 
                   under age 10, with toddlers and 
                   preschoolers making up a 

@@ -10,39 +10,75 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import amazon2 from "@/assets/amazon2.png";
+import { getAgencyByZipCode } from "@/services/api";
 
-const agencies = [
-  {
-    name: "Foster Toys",
-    address: "1100 11th Street, Sacramento, CA 95814",
-    phone: "(916) 483-0330"
-  }
-];
+const AMAZON_PUBLIC_URL = "https://www.amazon.com/hz/wishlist/ls/3NOW5IHJA7V6L?ref_=wl_share";
 
-// Mock function to simulate finding agencies by zip code
-const findAgenciesByZipCode = (zipCode: string, distance: string) => {
-  // In a real app, this would be an API call
-  console.log(`Searching for agencies near ${zipCode} within ${distance} miles`);
-  
-  // For demo purposes, return the agency if zip code is not empty
-  if (zipCode.trim() !== "") {
-    return agencies;
-  }
-  return [];
+type NearbyAgency = {
+  _id: string;
+  organization_name?: string;
+  contact_phone?: string;
+  contact_email?: string;
+  shipping_address?: string;
+  suite?: string;
+  state?: string;
+  zip_code?: string;
+  geocoded_address?: string;
+  distanceInMiles?: number;
 };
 
 function AmazonSection() {
   const [zipCode, setZipCode] = useState("");
-  const [distance, setDistance] = useState("");
-  const [foundAgencies, setFoundAgencies] = useState<typeof agencies>([]);
+  const [distance, setDistance] = useState("30");
+  const [foundAgencies, setFoundAgencies] = useState<NearbyAgency[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleFindAgencies = () => {
-    const results = findAgenciesByZipCode(zipCode, distance);
-    setFoundAgencies(results);
+  const radiusMiles = distance ? Number(distance) : 30;
+  const handleFindAgencies = async () => {
+    if (!zipCode.trim()) {
+      setError("Please enter a ZIP code to search.");
+      setFoundAgencies([]);
+      setHasSearched(false);
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
     setHasSearched(true);
+
+    try {
+      const response = await getAgencyByZipCode(zipCode.trim(), radiusMiles);
+      const agencies = Array.isArray(response?.agencies) ? response.agencies : [];
+      setFoundAgencies(agencies);
+    } catch (err: any) {
+      setError(
+        err?.response?.data?.message ||
+          err?.message ||
+          "Unable to load nearby agencies. Please try again."
+      );
+      setFoundAgencies([]);
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  const primaryAddress = (agency: NearbyAgency) => {
+    if (agency.geocoded_address) {
+      return agency.geocoded_address;
+    }
+
+    const parts = [
+      agency.shipping_address,
+      agency.suite,
+      agency.state,
+      agency.zip_code,
+    ].filter((value) => value && value.trim());
+
+    return parts.join(", ");
+  };
+
 
   return (
     <div className="">
@@ -81,6 +117,12 @@ function AmazonSection() {
                         placeholder="Enter your Zip Code here"
                         value={zipCode}
                         onChange={(e) => setZipCode(e.target.value)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Enter") {
+                            event.preventDefault();
+                            handleFindAgencies();
+                          }
+                        }}
                         className="px-4 py-3 sm:px-5 sm:py-3 md:px-5 md:py-3.5 lg:px-6 lg:py-3 xl:px-6 xl:py-3 2xl:px-8 2xl:py-5 w-full border text-[#2D2B42] border-black rounded-2xl text-sm sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl bg-transparent outline-none"
                       />
                     </div>
@@ -100,6 +142,7 @@ function AmazonSection() {
                             <SelectItem value="5" className="text-base md:text-lg lg:text-xl py-2">5 miles</SelectItem>
                             <SelectItem value="10" className="text-base md:text-lg lg:text-xl py-2">10 miles</SelectItem>
                             <SelectItem value="25" className="text-base md:text-lg lg:text-xl py-2">25 miles</SelectItem>
+                            <SelectItem value="30" className="text-base md:text-lg lg:text-xl py-2">30 miles</SelectItem>
                             <SelectItem value="50" className="text-base md:text-lg lg:text-xl py-2">50 miles</SelectItem>
                           </SelectContent>
                         </Select>
@@ -109,14 +152,20 @@ function AmazonSection() {
                       <div className="flex-1 md:flex-initial md:min-w-[90px] lg:min-w-[100px]">
                         <button 
                           onClick={handleFindAgencies}
-                          className="px-6 py-3 sm:px-7 sm:py-3 md:px-6 md:py-3.5 lg:px-8 lg:py-3 xl:px-8 xl:py-3 2xl:px-10 2xl:py-5 bg-[#2D2B42] text-white text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl font-bold rounded-2xl hover:bg-[#3D3B52] transition-colors duration-300 w-full h-full whitespace-nowrap"
+                          disabled={isLoading}
+                          className="px-6 py-3 sm:px-7 sm:py-3 md:px-6 md:py-3.5 lg:px-8 lg:py-3 xl:px-8 xl:py-3 2xl:px-10 2xl:py-5 bg-[#2D2B42] text-white text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl font-bold rounded-2xl hover:bg-[#3D3B52] transition-colors duration-300 w-full h-full whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
                         >
-                          Find
+                          {isLoading ? "Searching..." : "Find"}
                         </button>
                       </div>
                     </div>
                   </div>
                   
+                  {error && (
+                    <p className="text-start text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl text-red-600 mt-2">
+                      {error}
+                    </p>
+                  )}
                   <p className="text-start font-light text-xs sm:text-sm md:text-sm lg:text-sm xl:text-base 2xl:text-lg mt-2 sm:mt-3 md:mt-3 lg:mt-4 xl:mt-5 2xl:mt-6 italic text-gray-500">
                     If you don&apos;t see any results near you, you can still
                     donate to Foster Toys through Amazon. We&apos;re a small but
@@ -127,52 +176,71 @@ function AmazonSection() {
               </div>
               
               {/* Display search results */}
-              {hasSearched && (
+              {hasSearched && !isLoading && !error && (
                 <div className="md:px-4 lg:px-0 2xl:px-10 px-4 sm:px-6">
-                  {/* Message that appears regardless of search results */}
-                  <div className="text-start py-6 sm:py-8 md:py-8 lg:py-8">
-                    <p className="text-[#2D2B42] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl mb-4 italic 2xl:text-3xl font-light !leading-[1.5]">
-                      There are no donation locations within {distance}mi of {zipCode}. 
-                      You can still click the Amazon button to shop and ship donations, 
-                      and we&apos;ll take care of the rest.
+                  <div className="space-y-6 sm:space-y-8 md:space-y-10">
+                    {/* Results header */}
+                    <div className="text-[#2D2B42] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl font-light">
+                      Results: {foundAgencies.length} donation location
+                      {foundAgencies.length === 1 ? "" : "s"} within {radiusMiles}mi of {zipCode}
+                    </div>
+
+                    {/* Amazon fallback message */}
+                    <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
+                      You can still click the Amazon button below to shop donations from the Foster Toys Wishlist, and Amazon will ship them directly to us.
                     </p>
+
+                    {/* Agency details */}
+                    {foundAgencies.length > 0 && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-20 xl:gap-24 2xl:gap-32 font-inter text-start">
+                        {foundAgencies.map((agency, index) => (
+                          <div key={agency._id || index} className="flex flex-col space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8">
+                            <div className="flex flex-col space-y-2 md:space-y-2 lg:space-y-2 2xl:space-y-2">
+                              <div className="text-[#2D2B42] font-semibold text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl 2xl:text-3xl">
+                                {agency.organization_name || "Agency Donation Location"}
+                              </div>
+                              <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 2xl:1/2 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
+                                {primaryAddress(agency) || "Address coming soon"}
+                              </div>
+                              <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
+                                {agency.contact_phone || agency.contact_email || "Reach out to learn more"}
+                              </div>
+                              {typeof agency.distanceInMiles === "number" && (
+                                <div className="text-[#2D2B42] text-xs sm:text-sm md:text-sm lg:text-base xl:text-base 2xl:text-xl font-semibold">
+                                  {agency.distanceInMiles.toFixed(1)} miles away
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Amazon button */}
+                    <div className="flex justify-center mt-6 sm:mt-8 md:mt-10">
+                      <button
+                        onClick={() => window.open(AMAZON_PUBLIC_URL, "_blank")}
+                        className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                        aria-label="Shop donations from Foster Toys Wishlist on Amazon"
+                        title="Shop donations from Foster Toys Wishlist on Amazon"
+                      >
+                        <Image
+                          src={amazonButton}
+                          alt="Donate via Amazon"
+                          width={390}
+                          height={80}
+                          className="h-auto w-[280px] sm:w-[320px] md:w-[340px] lg:w-[420px] xl:w-[480px] 2xl:w-[650px]"
+                        />
+                      </button>
+                    </div>
                   </div>
-                  
-                  {foundAgencies.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-20 xl:gap-24 2xl:gap-32 font-inter text-start">
-                      {foundAgencies.map((agency, index) => (
-                        <div key={index} className="flex flex-col space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8">
-                          <div className="flex flex-col space-y-2 md:space-y-2 lg:space-y-2 2xl:space-y-2">
-                            <div className="text-[#2D2B42] font-semibold text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl 2xl:text-3xl">
-                              {agency.name}
-                            </div>
-                            <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 2xl:1/2 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
-                              {agency.address}
-                            </div>
-                            <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
-                              {agency.phone}
-                            </div>
-                          </div>
-                          <div className="w-full max-w-[350px] sm:max-w-[400px] md:max-w-[380px] lg:max-w-[250px] xl:max-w-[300px] 2xl:max-w-[550px]">
-                            <Image
-                              src={amazon2}
-                              alt="Donate via Amazon"
-                              width={400}
-                              height={150}
-                              className="w-full h-auto"
-                              priority
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-6 sm:py-8 md:py-8">
-                      <p className="text-[#2D2B42] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl mb-4">
-                        No specific agencies found, but you can still donate through Amazon.
-                      </p>
-                    </div>
-                  )}
+                </div>
+              )}
+              {isLoading && (
+                <div className="md:px-4 lg:px-0 2xl:px-10 px-4 sm:px-6 text-center py-6 sm:py-8 md:py-8">
+                  <p className="text-[#2D2B42] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                    Finding donation locations near you...
+                  </p>
                 </div>
               )}
               

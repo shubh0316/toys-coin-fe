@@ -7,7 +7,7 @@ import AmazonSection from "./components/amazonSection";
 import VolunteerSection from "./components/VolunteerSection";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Fundraiser from "./components/Fundraiser";
+// import Fundraiser from "./components/Fundraiser";
 
 export default function Home() {
   return (
@@ -19,9 +19,12 @@ export default function Home() {
      <TimelineSection />
      <DonationSection />
      <AmazonSection />
-     <Fundraiser />
+     {/* <Fundraiser /> */}
      <VolunteerSection />
      <Footer />    
     </>
   );
 }
+
+
+

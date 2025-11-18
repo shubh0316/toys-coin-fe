@@ -192,7 +192,7 @@ function DataTable<TData, TValue>({
                   key={row.id} 
                   data-state={row.getIsSelected() && "selected"}
                   className="hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 cursor-pointer"
-                  onClick={() => router.push(`/v/agency/${(row.original as Agency)._id}/account`)}
+                  onClick={() => router.push(`/v/admin/agency/${(row.original as Agency)._id}/account`)}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell 

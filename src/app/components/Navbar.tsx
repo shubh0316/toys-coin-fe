@@ -3,7 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import logoNav from "@/assets/logoNav.png";
-import twitter from "@/assets/twitter.png";
+
+const ZEFFY_DONATION_URL = "https://www.zeffy.com/en-US/donation-form/foster-toys-campaign";
 
 const Navbar = () => {
   const scrollToSection = (id: any) => {
@@ -13,26 +14,25 @@ const Navbar = () => {
     }
   };
 
+  const handleDonateClick = () => {
+    window.open(ZEFFY_DONATION_URL, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="sticky top-0 z-50">
-      {/* Mobile/iPad View - Logo + Twitter Only */}
+      {/* Mobile/iPad View - Logo + Donate Button */}
       <nav className="flex xl:hidden bg-[#2D2B42] text-white justify-between items-center p-4">
         <div className="flex items-center">
           <Image src={logoNav} alt="Logo" className="w-[200px] sm:w-[250px] md:w-[300px] h-auto" />
         </div>
         <motion.button
-          whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: "tween", stiffness: 300 }}
-          className="rounded-full bg-[#2D2B42] p-2.5"
-          onClick={() => window.open("https://twitter.com/fostertoys", "_blank")}
+          className="rounded-full bg-[#31CDE6] text-white px-6 py-2.5 font-frank text-base sm:text-lg font-semibold"
+          onClick={handleDonateClick}
         >
-          <Image
-            src={twitter}
-            alt="Twitter"
-            width={24}
-            className="w-6 h-6"
-          />
+          DONATE
         </motion.button>
       </nav>
 
@@ -60,7 +60,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("donate")}
+              onClick={handleDonateClick}
               className="hover:text-[#31CDE6] transition-colors"
             >
               Donate

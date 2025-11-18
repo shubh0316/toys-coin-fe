@@ -19,18 +19,18 @@ function DonationSection() {
         />
         <Container> 
           {/* Mobile View - Column Layout */}
-          <div className="lg:hidden flex flex-col justify-center items-center h-full py-12 px-6 sm:py-16 sm:px-8 md:py-20 md:px-10 space-y-8 sm:space-y-10 md:space-y-12">
+          <div className="lg:hidden flex flex-col justify-center items-center h-full py-12 px- sm:py-16 sm:px-8 md:py-20 md:px-10 space-y-8 sm:space-y-10 md:space-y-12">
             <Image 
               src={amazon} 
               width={480} 
               alt="Amazon Logo" 
-              className='w-full max-w-xs sm:max-w-sm md:max-w-md'
+              className='w-full  sm:max-w-sm md:max-w-md'
             />
             <div className='flex flex-col items-center space-y-5 sm:space-y-6 md:space-y-8 text-start px-6 sm:px-8 md:px-10'>
               <h2 className='font-frank text-5xl sm:text-4xl md:text-5xl text-[#2D2B42] leading-tight'>
                 DONATIONS MADE EASY AMAZON
               </h2>
-              <p className='text-xl sm:text-lg md:text-xl !leading-[1.6] font-light text-[#2D2B42] max-w-2xl'>
+              <p className='text-2xl sm:text-lg md:text-xl !leading-[1.6] font-light text-white max-w-2xl'>
                 Donating is great for everyone when you order through Amazon. You can easily shop for a donation from a wishlist of requested items by our foster care agency partners!
               </p>
             </div>

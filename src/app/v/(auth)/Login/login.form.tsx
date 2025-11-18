@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -29,10 +30,10 @@ const LoginForm: FC = () => {
   };
 
   return (
-    <div className="max-w-md  mt-20 mx-auto border-2 border-gray-500 rounded-2xl p-6 shadow-md">
-      <h2 className="text-4xl mb-4 text-center">Partner Login</h2>
+    <div className="max-w-md mt-20 mx-auto border-2 border-gray-500 rounded-2xl shadow-md px-4 py-10 sm:p-8 bg-white">
+      <h2 className="text-4xl mb-6 text-center">Partner Login</h2>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           {/* Email */}
           <FormField
             control={form.control}
@@ -64,15 +65,12 @@ const LoginForm: FC = () => {
           />
 
           {/* Forgot Password Link */}
-         
+          <div className="flex justify-between text-sm">
+            <Link href="/v/(auth)/forgot-password" className="text-black hover:underline">Forgot Password?</Link>
+          </div>
 
-          {/* Buttons */}
-          <div className="flex mt-8 justify-between">
-          <div className="">
-            <a href="#" className="text-black-500 hover:underline">Forgot Password?</a>
-          </div>
-            <Button className="" type="submit">Login</Button>
-          </div>
+          {/* Submit Button */}
+          <Button className="w-full rounded-2xl px-8 py-4 text-base" type="submit">Login</Button>
         </form>
       </Form>
     </div>

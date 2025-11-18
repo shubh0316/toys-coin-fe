@@ -135,6 +135,16 @@ export const getAllVolunteer = async (id: string) => {
   }
 };
 
+export const getAllVolunteers = async () => {
+  try {
+    const response = await axiosInstance.get('/api/volunteer/getAllVolunteers');
+    return response.data;
+  } catch (error) {
+    console.log("Error in getting all volunteers:", error);
+    throw error;
+  }
+};
+
 export const updateVolunteerDetails = async (id: string, data: any) => {
   try  {
     const response = await axiosInstance.patch(`/api/volunteer/${id}`, data);
@@ -159,18 +169,32 @@ export const forgotPassword = async (email: string) => {
    try {
     const response = await axiosInstance.post('/api/auth/forgot-password', { email });
     return response.data;
-   } catch (error) {
-    console.log("forgot Password error:", error);
-    throw error;
+   } catch (error: any) {
+    console.error("Forgot Password error:", error);
+    throw new Error(error.response?.data?.error || error.response?.data?.message || 'Failed to send password reset email. Please try again.');
    }
 }
 
-export const resetPassword = async (data: any) => {
+export const resetPassword = async (data: { token: string; newPassword: string; confirmPassword: string }) => {
   try {
     const response = await axiosInstance.post('/api/auth/reset-password', data);
     return response.data;
+  } catch (error: any) {
+    console.error("Reset password error:", error);
+    throw new Error(error.response?.data?.error || error.response?.data?.message || 'Failed to reset password. Please try again.');
+  }
+};
+export const getAgencyByZipCode = async (zipCode: string, radiusMiles: number) => {
+  try {
+    const response = await axiosInstance.get('/api/agencies/agencies/nearby', {
+      params: {
+        zip_code: zipCode,
+        radiusMiles,
+      },
+    });
+    return response.data;
   } catch (error) {
-    console.log("reset password error:", error);
+    console.log("Error in getting the agency by zip code:", error);
     throw error;
   }
 };

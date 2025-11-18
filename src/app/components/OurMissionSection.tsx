@@ -2,8 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import mission from '@/assets/teddy2.png'
-import OurMission from '@/assets/ourMission.png'
+import aidenImage from '@/assets/aiden.png'
 
 
 function OurMissionSection() {
@@ -23,41 +22,42 @@ function OurMissionSection() {
             className="flex flex-col items-center space-y-6 md:space-y-8"
           >
             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: 0.2,
+                duration: 0.8,
+                ease: "easeOut"
+               }}
+               className="space-y-4 md:space-y-5 text-left px-4 md:px-6"
+             >
+              <h2 className="font-frank text-[#2D2B42] text-6xl sm:text-7xl md:text-7xl font-bold leading-[0.9] tracking-tight">
+                <span className="block">Our</span>
+                <span className="block">Mission</span>
+              </h2>
+              <p className="text-xl sm:text-2xl md:text-2xl text-[#2D2B42] text-left font-light !leading-[1.6] sm:!leading-[1.6] md:!leading-[1.6]">
+                The transition into foster care is often one of the most difficult moments in a child&apos;s life. Many children enter care unexpectedly, sometimes in the middle of the night, with nothing more than the clothes they&apos;re wearing. Founded by a high school student, Aiden Kelly, Foster Toys provides toys of comfort and essential items to children on day-one of entering into foster care.
+              </p>
+            </motion.div>
+
+            <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{
-                delay: 0.2,
+                delay: 0.4,
                 duration: 0.7,
                 ease: "easeOut"
               }}
               className="w-full max-w-sm md:max-w-md"
             >
               <Image
-                src={OurMission}
+                src={aidenImage}
                 alt="Our Mission"
                 className="w-full rounded-2xl object-cover"
                 priority
               />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: 0.4,
-                duration: 0.8,
-                ease: "easeOut"
-              }}
-              className="space-y-4 md:space-y-5 text-center px-4 md:px-6"
-            >
-              <h2 className="font-frank text-[#2D2B42] text-4xl sm:text-5xl md:text-5xl font-bold leading-widest hidden lg:block">
-                Our Mission
-              </h2>
-              <p className="text-lg sm:text-xl md:text-xl leading-relaxed text-[#2D2B42] text-justify font-light">
-                The transition into foster care is often one of the most difficult moments in a child&apos;s life. Many children enter care unexpectedly, sometimes in the middle of the night, with nothing more than the clothes they&apos;re wearing. Founded by a high school student, Aiden Kelly, Foster Toys provides toys of comfort and essential items to children on day-one of entering into foster care.
-              </p>
             </motion.div>
           </motion.div>
         </div>
@@ -86,7 +86,7 @@ function OurMissionSection() {
           >
             <div className="relative max-w-md">
               <Image
-                src={mission}
+                src={aidenImage}
                 alt="Our Mission - Supporting foster children with comfort toys"
                 className="w-full max-w-sm sm:max-w-sm md:max-w-xl lg:max-w-xl xl:max-w-2xl 2xl:max-w-md rounded-2xl object-cover"
                 priority
@@ -143,8 +143,7 @@ function OurMissionSection() {
                 The transition into foster care is often one of the most difficult moments in a child&apos;s life. 
                 Many children enter care unexpectedly, sometimes in the middle of the night, with nothing more 
                 than the clothes they&apos;re wearing. Founded by a high school student, Aiden Kelly, Foster Toys 
-                provides toys of comfort and essential items to children on day-one of entering into foster care, 
-                offering a moment of comfort during their most challenging time.
+                provides toys of comfort and essential items to children on day-one of entering into foster care.
               </motion.p>
             </motion.div>
           </motion.div>

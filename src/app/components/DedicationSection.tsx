@@ -16,7 +16,7 @@ const DonationSection = () => {
   const textBefore = "Dedicated to providing";
   const textAnimated = "toys of comfort";
   const textAfterLine2 = "to kids";
-  const textLine3 = "entering into foster care";
+  const textLine3 = "entering into foster care.";
 
   return (
     <div
@@ -33,7 +33,7 @@ const DonationSection = () => {
 
       {/* Mobile View */}
       <div className="lg:hidden mx-auto w-full max-w-[1950px] px-4 sm:px-6 md:px-8"> 
-        <p className="relative font-frank text-3xl sm:text-5xl md:text-5xl font-bold tracking-wider leading-tight text-start p-2 md:p-3">
+        <p className="relative font-frank text-5xl sm:text-6xl md:text-7xl font-bold tracking-wider leading-tight text-start p-2 md:p-3">
           {/* Line 1: dedicated */}
           <span className="block text-white mb-3 sm:mb-4 md:mb-4">dedicated</span>
 
@@ -45,10 +45,16 @@ const DonationSection = () => {
             {textAnimated.split(" ").map((word, i) => {
               const start = i / textAnimated.length;
               const end = start + 0.5 / textAnimated.length;
+              const isComfort = word.toLowerCase() === "comfort";
               return (
-                <Word key={i} progress={scrollYProgress} range={[start, end]}>
-                  {word}
-                </Word>
+                <span
+                  key={i}
+                  className={isComfort ? "block" : "inline-block"}
+                >
+                  <Word progress={scrollYProgress} range={[start, end]}>
+                    {word}
+                  </Word>
+                </span>
               );
             })}
           </span>

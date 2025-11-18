@@ -1,7 +1,10 @@
 import axios from 'axios';
 
+// Use environment variable for API URL, fallback to backend port 80
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:80';
+
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:80', // Use your Next.js API route as the base URL
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
