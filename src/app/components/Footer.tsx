@@ -54,6 +54,9 @@ const Footer = () => {
               Foster Toys is a 501(c)3 tax-exempt
               <br /> nonprofit charity organization TAX ID 39-3621457
             </p>
+            <p className="text-white text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg font-bold font-inter uppercase text-center md:text-left">
+              ©2025 Foster Toys, All Rights Reserved
+            </p>
           </div>
         </div>
 
