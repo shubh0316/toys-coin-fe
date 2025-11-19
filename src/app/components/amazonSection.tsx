@@ -25,6 +25,7 @@ type NearbyAgency = {
   zip_code?: string;
   geocoded_address?: string;
   distanceInMiles?: number;
+  amazon_public?: string;
 };
 
 function AmazonSection() {
@@ -51,6 +52,8 @@ function AmazonSection() {
     try {
       const response = await getAgencyByZipCode(zipCode.trim(), radiusMiles);
       const agencies = Array.isArray(response?.agencies) ? response.agencies : [];
+      console.log("Agency response:", response);
+      console.log("Agencies data:", agencies);
       setFoundAgencies(agencies);
     } catch (err: any) {
       setError(
@@ -180,7 +183,7 @@ function AmazonSection() {
                 <div className="md:px-4 lg:px-0 2xl:px-10 px-4 sm:px-6">
                   <div className="space-y-6 sm:space-y-8 md:space-y-10">
                     {/* Results header */}
-                    <div className="text-[#2D2B42] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl font-light">
+                    <div className="text-[#2D2B42] font-bold text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl">
                       Results: {foundAgencies.length} donation location
                       {foundAgencies.length === 1 ? "" : "s"} within {radiusMiles}mi of {zipCode}
                     </div>
@@ -202,12 +205,29 @@ function AmazonSection() {
                               <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 2xl:1/2 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
                                 {primaryAddress(agency) || "Address coming soon"}
                               </div>
-                              <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
-                                {agency.contact_phone || agency.contact_email || "Reach out to learn more"}
-                              </div>
+                            
                               {typeof agency.distanceInMiles === "number" && (
                                 <div className="text-[#2D2B42] text-xs sm:text-sm md:text-sm lg:text-base xl:text-base 2xl:text-xl font-semibold">
                                   {agency.distanceInMiles.toFixed(1)} miles away
+                                </div>
+                              )}
+                              {/* Amazon Button for each agency */}
+                              {agency.amazon_public && (
+                                <div className="flex justify-start mt-4 sm:mt-5 md:mt-5 lg:mt-6">
+                                  <button
+                                    onClick={() => window.open(agency.amazon_public, "_blank")}
+                                    className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                                    aria-label={`Shop donations for ${agency.organization_name || "this agency"} on Amazon`}
+                                    title={`Shop donations for ${agency.organization_name || "this agency"} on Amazon`}
+                                  >
+                                    <Image
+                                      src={amazonButton}
+                                      alt="Donate via Amazon"
+                                      width={200}
+                                      height={80}
+                                      className="h-auto w-[200px] sm:w-[240px] md:w-[260px] lg:w-[300px] xl:w-[340px] 2xl:w-[420px]"
+                                    />
+                                  </button>
                                 </div>
                               )}
                             </div>
@@ -217,22 +237,7 @@ function AmazonSection() {
                     )}
 
                     {/* Amazon button */}
-                    <div className="flex justify-center mt-6 sm:mt-8 md:mt-10">
-                      <button
-                        onClick={() => window.open(AMAZON_PUBLIC_URL, "_blank")}
-                        className="cursor-pointer hover:scale-105 transition-transform duration-300"
-                        aria-label="Shop donations from Foster Toys Wishlist on Amazon"
-                        title="Shop donations from Foster Toys Wishlist on Amazon"
-                      >
-                        <Image
-                          src={amazonButton}
-                          alt="Donate via Amazon"
-                          width={390}
-                          height={80}
-                          className="h-auto w-[280px] sm:w-[320px] md:w-[340px] lg:w-[420px] xl:w-[480px] 2xl:w-[650px]"
-                        />
-                      </button>
-                    </div>
+                   
                   </div>
                 </div>
               )}

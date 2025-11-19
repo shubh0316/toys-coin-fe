@@ -3,7 +3,8 @@ import React from "react";
 import footerLogo from "@/assets/logoNav.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import twitter from "@/assets/facebook_white.png";
+import facebook from "@/assets/facebook_white.png";
+import twitter from "@/assets/twitter_white.png";
 import agencyButton from "@/assets/agency.png";
 import contactButton from "@/assets/contact.png";
 import volunteerButton from "@/assets/volunteer.png";
@@ -48,13 +49,10 @@ const Footer = () => {
             <br />
             to children entering into foster care.
           </p>
-          <div className="mt-4 md:mt-5 lg:mt-4 space-y-3 md:space-y-4">
-            <p className="text-white font-light text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg tracking-wider font-inter uppercase text-center md:text-left">
+          <div className="mt-4 md:mt-5 lg:mt-4">
+            <p className="text-white font-light text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg tracking-wider font-inter uppercase text-start md:text-left">
               Foster Toys is a 501(c)3 tax-exempt
               <br /> nonprofit charity organization TAX ID 39-3621457
-            </p>
-            <p className="text-white text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg font-bold font-inter uppercase text-center md:text-left">
-              ©2025 Foster Toys, All Rights Reserved
             </p>
           </div>
         </div>
@@ -178,24 +176,47 @@ const Footer = () => {
               </motion.button>
             </div>
 
-            {/* Twitter */}
-            <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "tween", stiffness: 300 }}
-              className="rounded-full bg-[#2D2B42] p-3 md:p-3.5 lg:p-4"
-              onClick={() =>
-                window.open("https://twitter.com/fostertoys", "_blank")
-              }
-            >
-              <Image
-                src={twitter}
-                alt="Twitter"
-                width={24}
-                className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 2xl:w-12 2xl:h-12"
-              />
-            </motion.button>
+            <div className="flex gap-3 md:gap-4 items-center">
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "tween", stiffness: 300 }}
+                className="rounded-full bg-[#2D2B42] p-3 md:p-3.5 lg:p-4"
+                onClick={() =>
+                  window.open("https://www.facebook.com/fostertoys", "_blank")
+                }
+              >
+                <Image
+                  src={facebook}
+                  alt="facebook"
+                  width={24}
+                  className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 2xl:w-12 2xl:h-12"
+                />
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: "#3A374D" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "tween", stiffness: 300 }}
+                className="rounded-full bg-[#2D2B42] p-3 md:p-3.5 lg:p-4"
+                onClick={() =>
+                  window.open("https://www.twitter.com/fostertoys", "_blank")
+                }
+              >
+                <Image
+                  src={twitter}
+                  alt="twitter"
+                  width={24}
+                  className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 2xl:w-12 2xl:h-12"
+                />
+              </motion.button>
+            </div>
           </div>
+        </div>
+        
+        <div className="px-4 md:px-6 lg:px-4 pb-4 md:pb-6 lg:pb-4">
+          <p className="text-white text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg font-bold font-inter uppercase text-center md:text-left">
+            ©2025 Foster Toys, All Rights Reserved
+          </p>
         </div>
       </div>
     </div>

@@ -186,7 +186,7 @@ export const resetPassword = async (data: { token: string; newPassword: string; 
 };
 export const getAgencyByZipCode = async (zipCode: string, radiusMiles: number) => {
   try {
-    const response = await axiosInstance.get('/api/agencies/agencies/nearby', {
+    const response = await axiosInstance.get('/api/agencies/nearby', {
       params: {
         zip_code: zipCode,
         radiusMiles,

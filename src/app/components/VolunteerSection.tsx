@@ -16,7 +16,7 @@ const VolunteerSection = () => {
         style={{ backgroundImage: `url(${sectionBg.src})` }}
       />
       <Container>
-        <div className="absolute inset-0 flex items-start md:items-center justify-center px-4 md:px-6 lg:px-8 xl:px-12 pt-24 sm:pt-28 md:pt-0">
+        <div className="absolute inset-0 flex items-start md:items-center justify-center px-4 md:px-6 lg:px-8 xl:px-12 pt-24 sm:pt-28 md:pt-0 mb-40">
           <div className="rounded-2xl md:rounded-2xl lg:rounded-3xl 2xl:rounded-[32px] max-w-4xl md:max-w-5xl lg:max-w-5xl xl:max-w-6xl w-full">
             <h2 className="text-5xl sm:text-6xl md:text-[80px] lg:text-[100px] xl:text-[130px] 2xl:text-[170px] text-center font-frank text-[#2D2B42] capitalize leading-tight md:leading-tight lg:leading-tight">
               Volunteers
