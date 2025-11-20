@@ -85,7 +85,7 @@ const LoginForm: FC = () => {
 
           {/* Forgot Password Link */}
           <div className="flex justify-between text-sm">
-            <Link href="/v/admin/forgot-password" className="text-black hover:underline">Forgot Password?</Link>
+            <Link href="/v/forgot-password" className="text-black hover:underline">Forgot Password?</Link>
           </div>
 
           {/* Submit Button */}

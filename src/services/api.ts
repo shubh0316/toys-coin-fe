@@ -119,9 +119,11 @@ export const volunteerRegister = async (data : any) => {
   try {
     const response = await axiosInstance.post('/api/volunteer/register', data);
     return response.data;
-  } catch (error) {
-    console.log("Error onboarding agency:",  error);
-    throw error;
+  } catch (error: any) {
+    console.log("Error registering volunteer:", error);
+    // Extract error message from backend response
+    const errorMessage = error.response?.data?.message || error.message || "Failed to register volunteer. Please try again.";
+    throw new Error(errorMessage);
   }
 };
 

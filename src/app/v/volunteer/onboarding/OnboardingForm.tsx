@@ -50,11 +50,13 @@ const OnboardingForm: FC = () => {
   const onSubmit = async (data: OnboardingFormValues) => {
     try {
       setLoading(true);
-      await volunteerRegister(data);
-      toast.success("Onboarding successful!");
+      const response = await volunteerRegister(data);
+      toast.success(response?.message || "Volunteer registered successfully!");
       router.push('/v/volunteer/Login');
-    } catch (error) {
-      toast.error("Failed to onboard volunteer. Please try again.");
+    } catch (error: any) {
+      // Display specific error message from backend
+      const errorMessage = error?.message || "Failed to register volunteer. Please try again.";
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }

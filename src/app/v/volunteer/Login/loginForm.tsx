@@ -91,7 +91,7 @@ const LoginForm: FC = () => {
           />
 
           <div className="flex justify-between text-sm">
-            <Link href="/v/volunteer/forgot-password" className="text-black hover:underline">Forgot Password?</Link>
+            <Link href="/v/forgot-password" className="text-black hover:underline">Forgot Password?</Link>
           </div>
 
           <Button type="submit" disabled={loading} className="w-full rounded-2xl py-6 text-base">

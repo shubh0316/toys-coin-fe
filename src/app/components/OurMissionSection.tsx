@@ -84,11 +84,11 @@ function OurMissionSection() {
             }}
             className="flex justify-center w-full lg:w-1/4"
           >
-            <div className="relative max-w-md">
+            <div className="relative max-w-md xl:max-w-4xl 2xl:max-w-6xl">
               <Image
                 src={aidenImage}
                 alt="Our Mission - Supporting foster children with comfort toys"
-                className="w-full max-w-sm sm:max-w-sm md:max-w-xl lg:max-w-xl xl:max-w-2xl 2xl:max-w-md rounded-2xl object-cover"
+                className="w-full max-w-sm sm:max-w-sm md:max-w-xl lg:max-w-xl xl:max-w-5xl 2xl:max-w-7xl rounded-2xl object-cover"
                 priority
               />
             </div>
