@@ -216,11 +216,11 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="px-4 md:px-6 lg:px-4 pb-4 md:pb-6 lg:pb-4">
+        {/* <div className="px-4 md:px-6 lg:px-4 pb-4 md:pb-6 lg:pb-4">
           <p className="text-white text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg font-bold font-inter uppercase text-center md:text-left">
             ©2025 Foster Toys, All Rights Reserved
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

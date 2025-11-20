@@ -45,41 +45,31 @@ function DonationSection() {
             />
           </div>
 
-          {/* Desktop/Laptop View - Original Layout */}
-          <div className="hidden lg:flex flex-row justify-center items-center h-full py-6 px-4 lg:py-8 lg:px-6 xl:py-10 xl:px-8 2xl:py-12 2xl:px-10 pb-4 gap-4 lg:gap-5 xl:gap-6 2xl:gap-8">
-            <div className="flex-shrink-0">
-              <Image 
-                src={amazon} 
-                width={480} 
-                height={480}
-                alt="Amazon Logo" 
-                className='w-auto h-auto lg:w-[320px] lg:h-auto xl:w-[380px] 2xl:w-[550px] object-contain' 
-              />
+          {/* Desktop/Laptop View - Column Layout */}
+          <div className="hidden lg:flex flex-col justify-center items-center h-full py-12 lg:py-16 xl:py-20 2xl:py-24 px-4 lg:px-6 xl:px-8 2xl:px-10 space-y-8 lg:space-y-10 xl:space-y-12 2xl:space-y-16">
+            <Image 
+              src={amazon} 
+              width={480} 
+              alt="Amazon Logo" 
+              className='w-full lg:max-w-md xl:max-w-lg 2xl:max-w-xl'
+            />
+            <div className='flex flex-col items-center space-y-5 lg:space-y-6 xl:space-y-8 2xl:space-y-10 text-center px-6 lg:px-8 xl:px-10 2xl:px-12'>
+              <h2 className='font-frank text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-[#2D2B42] leading-tight'>
+                DONATIONS MADE EASY AMAZON
+              </h2>
+              <p className='text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl !leading-[1.6] font-light text-white max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl'>
+                Donating is great for everyone when you<br />
+                order through Amazon. You can easily shop<br />
+                for a donation from a wishlist of requested<br />
+                items by our foster care agency partners!
+              </p>
             </div>
-            <div className='bg-[#31CDE6] rounded-[180px] lg:rounded-[200px] xl:rounded-[220px] 2xl:rounded-[260px] border-4 lg:border-[5px] xl:border-[6px] 2xl:border-8 border-white mt-6 lg:mt-7 xl:mt-8 2xl:mt-10 flex justify-center items-center flex-shrink-0 max-w-[740px] lg:max-w-[620px] xl:max-w-[840px] 2xl:max-w-[1300px] overflow-hidden'>
-              <div className='flex flex-row items-center p-6 lg:p-8 xl:p-10 2xl:p-16 gap-5 lg:gap-6 xl:gap-7 2xl:gap-9 w-full'>
-                 <div className="flex-shrink-0">
-                   <Image 
-                     src={panda} 
-                     alt="Panda" 
-                     width={200} 
-                     height={200}
-                     className='w-auto h-auto lg:w-[140px] lg:h-auto xl:w-[160px] xl:h-auto 2xl:w-[240px] 2xl:h-auto object-contain' 
-                   />
-                 </div>
-                 <div className='flex flex-col space-y-3 lg:space-y-3 xl:space-y-4 2xl:space-y-5 flex-1 min-w-0'>
-                  <h2 className='font-frank text-2xl lg:text-5xl xl:text-4xl 2xl:text-6xl text-[#2D2B42] leading-tight'>
-                    DONATIONS MADE <br />EASY THROUGH AMAZON
-                  </h2>
-                  <p className='text-base lg:text-xl xl:text-xl 2xl:text-3xl !leading-[1.5] font-light text-[#2D2B42]'>
-                    Donating is great for everyone when you<br />
-                    order through Amazon. You can easily shop<br />
-                    for a donation from a wishlist of requested<br />
-                    items by our foster care agency partners!
-                  </p>
-                 </div>
-              </div>
-            </div>
+            <Image 
+              src={panda} 
+              alt="Panda" 
+              width={200} 
+              className='w-full lg:max-w-[280px] xl:max-w-[320px] 2xl:max-w-[400px]'
+            />
           </div>
         </Container>
       </div>
