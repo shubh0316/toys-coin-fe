@@ -4,7 +4,7 @@ import hero from "@/assets/hero1.jpeg";
 
 function HeroSection() {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen md:h-screen lg:h-screen">
       <Image
         src={hero}
         alt="Hero Image"

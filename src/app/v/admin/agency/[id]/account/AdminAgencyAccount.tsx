@@ -25,6 +25,7 @@ const accountSchema = z.object({
   contact_email: z.string().email("Invalid email address"),
   contact_phone: z.string().min(10, "Invalid phone number"),
   shipping_address: z.string().min(5, "Address is required"),
+  suite: z.string().optional(),
   state: z.string().min(2, "State is required"),
   zip_code: z.string().min(5, "Invalid ZIP code"),
   amazon_private: z.string().min(2, "Amazon Private Link is required"),
@@ -46,6 +47,7 @@ const AdminAgencyAccount: FC = () => {
       contact_email: "",
       contact_phone: "",
       shipping_address: "",
+      suite: "",
       state: "",
       zip_code: "",
       amazon_private: AMAZON_PRIVATE_URL,
@@ -187,6 +189,15 @@ const AdminAgencyAccount: FC = () => {
             <FormItem>
               <FormLabel>Shipping Address</FormLabel>
               <FormControl><Input {...field} className="rounded-2xl" /></FormControl>
+              <FormMessage />
+            </FormItem>
+          )} />
+
+          {/* ✅ Suite */}
+          <FormField control={form.control} name="suite" render={({ field }) => (
+            <FormItem>
+              <FormLabel>Suite</FormLabel>
+              <FormControl><Input {...field} className="rounded-2xl" placeholder="Optional" /></FormControl>
               <FormMessage />
             </FormItem>
           )} />

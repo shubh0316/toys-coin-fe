@@ -10,7 +10,7 @@ function OurMissionSection() {
     <div id="our-mission" className="relative bg-gradient-to-br from-[#F9EFE0] to-[#F5E4CF] w-full overflow-hidden">
       <div className="mx-auto w-full max-w-[1950px]"> 
         {/* Mobile Only Section */}
-        <div className="lg:hidden py-16 md:py-20 px-4 md:px-6">
+        <div className="md:hidden py-16 px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ function OurMissionSection() {
           </motion.div>
         </div>
 
-        {/* Desktop/Laptop View - Hidden on mobile */}
+        {/* iPad and Desktop View - Hidden on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ function OurMissionSection() {
             duration: 0.8,
             ease: "easeOut"
           }}
-          className="hidden lg:flex relative z-10 flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 xl:gap-28 2xl:gap-32 py-16 lg:py-20 xl:py-24 2xl:py-32"
+          className="hidden md:flex relative z-10 flex-col md:flex-row items-center justify-center gap-10 md:gap-12 lg:gap-20 xl:gap-28 2xl:gap-32 py-12 md:py-14 lg:py-20 xl:py-24 2xl:py-32 px-4 md:px-5 lg:px-6"
         >
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
@@ -84,18 +84,18 @@ function OurMissionSection() {
             }}
             className="flex justify-center w-full lg:w-1/4"
           >
-            <div className="relative max-w-md xl:max-w-4xl 2xl:max-w-6xl">
+            <div className="relative max-w-md md:max-w-md lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl">
               <Image
                 src={aidenImage}
                 alt="Our Mission - Supporting foster children with comfort toys"
-                className="w-full max-w-sm sm:max-w-sm md:max-w-xl lg:max-w-xl xl:max-w-5xl 2xl:max-w-7xl rounded-2xl object-cover"
+                className="w-full max-w-sm md:max-w-sm lg:max-w-xl xl:max-w-5xl 2xl:max-w-7xl rounded-2xl object-cover"
                 priority
               />
             </div>
           </motion.div>
 
           <motion.div 
-            className="flex flex-col space-y-6 md:space-y-8 w-full lg:w-1/2 max-w-7xl"
+            className="flex flex-col space-y-5 md:space-y-6 lg:space-y-8 w-full lg:w-1/2 max-w-7xl"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -114,7 +114,7 @@ function OurMissionSection() {
                   delay: 0.6,
                   duration: 0.7
                 }}
-                className="font-frank text-[#2D2B42] text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-widest"
+                className="font-frank text-[#2D2B42] text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-widest"
               >
                 Our Mission
               </motion.h2>
@@ -132,9 +132,9 @@ function OurMissionSection() {
               }}
             >
               <motion.p
-                className="text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 
-                           !leading-[1.6] lg:!leading-[1.6] xl:!leading-[1.6] 2xl:leading-[1.7] text-[#2D2B42] text-justify p-4 lg:p-4 xl:p-4
-                           font-light lg:text-left w-full"
+                className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 
+                           !leading-[1.6] md:!leading-[1.6] lg:!leading-[1.6] xl:!leading-[1.6] 2xl:leading-[1.7] text-[#2D2B42] text-justify md:text-left p-4
+                           font-light w-full"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
