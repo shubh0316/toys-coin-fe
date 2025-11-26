@@ -57,7 +57,7 @@ function DonationSection() {
                 className='w-auto h-auto md:w-[240px] md:h-auto lg:w-[280px] lg:h-auto xl:w-[380px] 2xl:w-[550px] object-contain' 
               />
             </div>
-            <div className='bg-[#31CDE6] rounded-[180px] md:rounded-[190px] lg:rounded-[200px] xl:rounded-[220px] 2xl:rounded-[260px] border-4 md:border-[4px] lg:border-[5px] xl:border-[6px] 2xl:border-8 border-white mt-6 md:mt-6 lg:mt-7 xl:mt-8 2xl:mt-10 flex justify-center items-center flex-shrink-0 w-full max-w-[460px] md:max-w-[480px] lg:max-w-[560px] xl:max-w-[750px] 2xl:max-w-[1300px] overflow-hidden'>
+            <div className='bg-[#31CDE6] rounded-[180px] md:rounded-[190px] lg:rounded-[200px] xl:rounded-[220px] 2xl:rounded-[260px] border-4 md:border-[4px] lg:border-[5px] xl:border-[6px] 2xl:border-8 border-white mt-6 md:mt-6 lg:mt-7 xl:mt-8 2xl:mt-10 flex justify-center items-center flex-shrink-0 w-full max-w-[460px] md:max-w-[480px] lg:max-w-[560px] xl:max-w-[720px] 2xl:max-w-[1200px] overflow-hidden'>
               <div className='flex flex-row items-center p-3 md:p-4 lg:p-5 xl:p-10 2xl:p-16 gap-2.5 md:gap-3 lg:gap-4 xl:gap-7 2xl:gap-9 w-full'>
                  <div className="flex-shrink-0">
                    <Image 

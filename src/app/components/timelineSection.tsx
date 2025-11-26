@@ -90,7 +90,7 @@ const TimelineSection = () => {
                     alt="Fair Launch" 
                     width={280}
                     height={280}
-                    className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[220px] md:h-[220px] lg:w-[320px] lg:h-[320px] xl:w-[450px] xl:h-[450px] 2xl:w-[700px] 2xl:h-[700px] rounded-full object-cover"
+                    className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[220px] md:h-[220px] lg:w-[320px] lg:h-[320px] xl:w-[450px] xl:h-[450px] 2xl:w-[700px] 2xl:h-[500px] rounded-full object-cover"
                   />
                 </div>
               </div>

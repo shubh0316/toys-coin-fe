@@ -50,12 +50,12 @@ function OurMissionSection() {
                 duration: 0.7,
                 ease: "easeOut"
               }}
-              className="w-full max-w-sm md:max-w-md"
+              className="w-full max-w-lg md:max-w-xl "
             >
               <Image
                 src={aidenImage}
                 alt="Our Mission"
-                className="w-full rounded-2xl object-cover"
+                className="rounded-2xl object-cover w-full"
                 priority
               />
             </motion.div>
@@ -84,11 +84,11 @@ function OurMissionSection() {
             }}
             className="flex justify-center w-full lg:w-1/4"
           >
-            <div className="relative max-w-md md:max-w-md lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl">
+            <div className="relative max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-7xl">
               <Image
                 src={aidenImage}
                 alt="Our Mission - Supporting foster children with comfort toys"
-                className="w-full max-w-sm md:max-w-sm lg:max-w-xl xl:max-w-5xl 2xl:max-w-7xl rounded-2xl object-cover"
+                className="w-full max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-[90rem] rounded-2xl object-cover"
                 priority
               />
             </div>
