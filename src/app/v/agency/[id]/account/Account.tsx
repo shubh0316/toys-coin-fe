@@ -304,7 +304,6 @@ const AccountForm: FC<AccountFormProps> = ({ allowAmazonEdit = false }) => {
             <Switch 
               checked={isActive} 
               onCheckedChange={handleToggle}
-              className="data-[state=unchecked]:bg-gray-300"
             />
             <span>{isActive ? "Active" : "Paused"}</span>
           </div>
