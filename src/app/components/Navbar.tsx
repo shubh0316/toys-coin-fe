@@ -15,6 +15,10 @@ const Navbar = () => {
   };
 
   const handleDonateClick = () => {
+    scrollToSection("shop-ship-donations");
+  };
+
+  const handleFundraiserClick = () => {
     window.open(ZEFFY_DONATION_URL, "_blank", "noopener,noreferrer");
   };
 
@@ -68,7 +72,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("fundraiser")}
+              onClick={handleFundraiserClick}
               className="hover:text-[#31CDE6] transition-colors"
             >
               Fundraiser

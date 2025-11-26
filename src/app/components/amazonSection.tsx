@@ -84,7 +84,7 @@ function AmazonSection() {
 
 
   return (
-    <div className="">
+    <div id="shop-ship-donations" className="">
       <div className="bg-[#F9EFE0]">
         <Container> 
          <div className="flex flex-col space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8 xl:space-y-8 2xl:space-y-10 text-start">

@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Foster Toys",
   description: "Dedicated to providing toys of comfort to over 400,000 kids entering into foster care.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

@@ -52,7 +52,7 @@ const Footer = () => {
           </p>
           <div className="mt-4 md:mt-5 lg:mt-4">
             <p className="text-gray-300 md:text-white font-light text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg tracking-wider font-inter uppercase text-start md:text-left">
-              FOSTER TOYS IS A 501(C)3 TAX-EXEMPT NONPROFIT CHARITY ORGANIZATION TAX ID 39-3621457
+              FOSTER TOYS IS A 501(C)3 TAX-EXEMPT NONPROFIT  ORGANIZATION TAX ID 39-3621457
             </p>
             <p className="text-white text-xs md:text-xs lg:text-sm xl:text-base 2xl:text-lg font-bold font-inter uppercase text-center md:text-left hidden md:block">
               ©2025 Foster Toys, Inc. All Rights Reserved
@@ -186,7 +186,7 @@ const Footer = () => {
                 transition={{ type: "tween", stiffness: 300 }}
                 className="rounded-full bg-[#2D2B42] p-3 md:p-3.5 lg:p-4"
                 onClick={() =>
-                  window.open("https://www.facebook.com/fostertoys", "_blank")
+                  window.open("https://www.facebook.com/fostertoyscharity", "_blank")
                 }
               >
                 <Image
