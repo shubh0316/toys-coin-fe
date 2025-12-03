@@ -189,9 +189,15 @@ function AmazonSection() {
                     </div>
 
                     {/* Amazon fallback message */}
-                    <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
-                      You can still click the Amazon button below to shop donations from the Foster Toys Wishlist, and Amazon will ship them directly to us.
-                    </p>
+                    {foundAgencies.length === 1 && foundAgencies[0]._id === "foster-toys-default" ? (
+                      <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
+                        You can still click the Amazon button below to shop donations from the Foster Toys Wishlist, and Amazon will ship them directly to us.
+                      </p>
+                    ) : foundAgencies.length > 0 ? (
+                      <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
+                        Simply click the Amazon button below a listing to purchase an item from the agency's Wishlist, and Amazon will ship your donation directly to them.
+                      </p>
+                    ) : null}
                     {/* Agency details */}
                     {foundAgencies.length > 0 && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-20 xl:gap-24 2xl:gap-32 font-inter text-start">
@@ -205,8 +211,14 @@ function AmazonSection() {
                               <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 2xl:1/2 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
                                 {primaryAddress(agency) || "Address coming soon"}
                               </div>
+                              
+                              {agency.contact_phone && (
+                                <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl font-light">
+                                  {agency.contact_phone}
+                                </div>
+                              )}
                             
-                              {typeof agency.distanceInMiles === "number" && (
+                              {typeof agency.distanceInMiles === "number" && agency.distanceInMiles > 0 && (
                                 <div className="text-[#2D2B42] text-xs sm:text-sm md:text-sm lg:text-base xl:text-base 2xl:text-xl font-semibold">
                                   {agency.distanceInMiles.toFixed(1)} miles away
                                 </div>
