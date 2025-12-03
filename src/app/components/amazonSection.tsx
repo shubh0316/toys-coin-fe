@@ -195,7 +195,7 @@ function AmazonSection() {
                       </p>
                     ) : foundAgencies.length > 0 ? (
                       <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
-                        Simply click the Amazon button below a listing to purchase an item from the agency's Wishlist, and Amazon will ship your donation directly to them.
+                        Simply click the Amazon button below a listing to purchase an item from the agency&apos;s Wishlist, and Amazon will ship your donation directly to them.
                       </p>
                     ) : null}
                     {/* Agency details */}
