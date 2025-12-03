@@ -73,7 +73,7 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Contact Person</FormLabel>
               <FormControl>
-                <Input className="rounded-2xl" {...field} />
+                <Input className="rounded-xl border-0" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,7 +84,7 @@ const OnboardingForm: FC = () => {
               <FormControl>
                 <Input
                   type="email"
-                  className="rounded-2xl"
+                  className="rounded-xl border-0"
                   {...field}
                 />
               </FormControl>
@@ -96,7 +96,7 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input type="password" className="rounded-2xl" {...field} />
+                <Input type="password" className="rounded-xl border-0" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -105,7 +105,7 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <Input type="password" className="rounded-2xl" {...field} />
+                <Input type="password" className="rounded-xl border-0" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -114,7 +114,7 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Phone</FormLabel>
               <FormControl>
-                <Input type="tel" className="rounded-2xl" {...field} />
+                <Input type="tel" className="rounded-xl border-0" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -123,13 +123,13 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Enter your zip code (we will match you with events within 50 miles)</FormLabel>
               <FormControl>
-                <Input className="rounded-2xl" {...field} />
+                <Input className="rounded-xl border-0" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )} />
           <div className="flex justify-end">
-            <Button className="w-full mt-4 sm:mt-6 rounded-2xl text-sm sm:text-base py-2 sm:py-3" type="submit" disabled={loading}>
+            <Button className="w-full mt-4 sm:mt-6 rounded-xl text-sm sm:text-base py-4 sm:py-5" type="submit" disabled={loading}>
               {loading ? "Submitting..." : "Submit"}
             </Button>
           </div>

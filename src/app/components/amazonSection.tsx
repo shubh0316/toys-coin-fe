@@ -179,22 +179,25 @@ function AmazonSection() {
               </div>
               
               {/* Display search results */}
-              {hasSearched && !isLoading && !error && (
+              {hasSearched && !isLoading && !error && (() => {
+                const isOnlyFosterToys = foundAgencies.length === 1 && foundAgencies[0]._id === "foster-toys-default";
+                const displayCount = isOnlyFosterToys ? 0 : foundAgencies.length;
+                
+                return (
                 <div className="md:px-4 lg:px-0 2xl:px-10 px-4 sm:px-6">
                   <div className="space-y-6 sm:space-y-8 md:space-y-10">
                     {/* Results header */}
                     <div className="text-[#2D2B42] font-bold text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-3xl">
-                      Results: {foundAgencies.length} donation location
-                      {foundAgencies.length === 1 ? "" : "s"} within {radiusMiles}mi of {zipCode}
+                      Results: {displayCount} donation location{displayCount === 1 ? "" : "s"} within {radiusMiles}mi of {zipCode}
                     </div>
 
                     {/* Amazon fallback message */}
                     {foundAgencies.length === 1 && foundAgencies[0]._id === "foster-toys-default" ? (
-                      <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
+                      <p className="text-[#2D2B42] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-normal italic w-full leading-relaxed">
                         You can still click the Amazon button below to shop donations from the Foster Toys Wishlist, and Amazon will ship them directly to us.
                       </p>
                     ) : foundAgencies.length > 0 ? (
-                      <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
+                      <p className="text-[#2D2B42] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-normal italic w-full leading-relaxed">
                         Simply click the Amazon button below a listing to purchase an item from the agency&apos;s Wishlist, and Amazon will ship your donation directly to them.
                       </p>
                     ) : null}
@@ -211,12 +214,6 @@ function AmazonSection() {
                               <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl w-full md:w-4/5 lg:w-2/3 xl:w-3/4 2xl:1/2 leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed font-light">
                                 {primaryAddress(agency) || "Address coming soon"}
                               </div>
-                              
-                              {agency.contact_phone && (
-                                <div className="text-[#2D2B42] text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-2xl font-light">
-                                  {agency.contact_phone}
-                                </div>
-                              )}
                             
                               {typeof agency.distanceInMiles === "number" && agency.distanceInMiles > 0 && (
                                 <div className="text-[#2D2B42] text-xs sm:text-sm md:text-sm lg:text-base xl:text-base 2xl:text-xl font-semibold">
@@ -254,7 +251,8 @@ function AmazonSection() {
                    
                   </div>
                 </div>
-              )}
+                );
+              })()}
               {isLoading && (
                 <div className="md:px-4 lg:px-0 2xl:px-10 px-4 sm:px-6 text-center py-6 sm:py-8 md:py-8">
                   <p className="text-[#2D2B42] text-base sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
