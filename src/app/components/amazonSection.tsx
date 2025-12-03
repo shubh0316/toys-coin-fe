@@ -192,11 +192,11 @@ function AmazonSection() {
                     <p className="text-gray-400 italic text-sm sm:text-base md:text-base lg:text-base xl:text-lg 2xl:text-xl font-light">
                       You can still click the Amazon button below to shop donations from the Foster Toys Wishlist, and Amazon will ship them directly to us.
                     </p>
-
                     {/* Agency details */}
                     {foundAgencies.length > 0 && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-20 xl:gap-24 2xl:gap-32 font-inter text-start">
                         {foundAgencies.map((agency, index) => (
+                          console.log("agency.amazon_public", agency.amazon_public),
                           <div key={agency._id || index} className="flex flex-col space-y-3 sm:space-y-4 md:space-y-4 lg:space-y-6 xl:space-y-8">
                             <div className="flex flex-col space-y-2 md:space-y-2 lg:space-y-2 2xl:space-y-2">
                               <div className="text-[#2D2B42] font-semibold text-base sm:text-lg md:text-lg lg:text-lg xl:text-xl 2xl:text-3xl">
@@ -211,6 +211,8 @@ function AmazonSection() {
                                   {agency.distanceInMiles.toFixed(1)} miles away
                                 </div>
                               )}
+
+
                               {/* Amazon Button for each agency */}
                               {agency.amazon_public && (
                                 <div className="flex justify-start mt-4 sm:mt-5 md:mt-5 lg:mt-6">

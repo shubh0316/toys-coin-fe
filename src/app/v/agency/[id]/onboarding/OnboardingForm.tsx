@@ -51,8 +51,8 @@ const OnboardingForm: FC = () => {
       suite: "",
       state: "",
       zip_code: "",
-      amazon_private: "",
-      amazon_public: "",
+      amazon_private: "https://www.amazon.com/hz/wishlist/dl/invite/YwtOPTOD2ZgBHnAYMjkBXs-JtZK0ePGPevp4ITVl0cLM3yGNPB3eg1qyu-Z_FW2YvAjaQ-LfZpgBVXbt42lRTlpAv-r6pMMGwY3siK0?ref_=wl_share",
+      amazon_public: "https://www.amazon.com/hz/wishlist/ls/3NOW5IHJA7V6L?ref_=wl_share",
       choose_password: "",
       confirm_password: "",
     },
@@ -198,7 +198,11 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Amazon Private</FormLabel>
               <FormControl>
-                <Input className="border-2 rounded-2xl border-gray-500 p-4" {...field} />
+                <Input
+                  className="border-2 rounded-2xl border-gray-500 p-4 bg-gray-200 cursor-text"
+                  {...field}
+                  readOnly
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -207,7 +211,11 @@ const OnboardingForm: FC = () => {
             <FormItem>
               <FormLabel>Amazon Public</FormLabel>
               <FormControl>
-                <Input className="border-2 rounded-2xl border-gray-500 p-4" {...field} />
+                <Input
+                  className="border-2 rounded-2xl border-gray-500 p-4 bg-gray-200 cursor-text"
+                  {...field}
+                  readOnly
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
