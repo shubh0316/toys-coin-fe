@@ -65,7 +65,7 @@ const OnboardingForm: FC = () => {
   return (
     <div className="max-w-2xl mx-auto mt-4 sm:mt-6 md:mt-8 lg:mt-10 rounded-2xl p-4 sm:p-5 md:p-6 px-4 sm:px-6">
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-3 sm:mb-4 text-start font-frank leading-tight">Volunteer Onboarding</h2>
-      <p className="text-sm sm:text-base md:text-lg font-inter tracking-wider mb-4 sm:mb-6 leading-relaxed">Volunteers can help in many ways, from wrap presents for holidays to helping to organize events. Please fill out the form and if your help is needed, you will be contacted directly by the agency partner or Foster Toys.</p>
+      <p className="text-sm sm:text-base md:text-lg font-inter tracking-wider mb-4 sm:mb-6 leading-relaxed">Volunteers can help in many ways, from wrapping presents to helping organize events. Please fill out the form and if your help is needed, you will be contacted directly by one of our agency partners or Foster Toys.</p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
     
